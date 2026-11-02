@@ -8,8 +8,25 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - For any idea he shares, also give five short lenses: 10x this, What am I missing?, Steelman this, ELI5, Be brutal.
 - Do not create extra docs or files unless he asks. Do not start building until the plan is discussed and he approves it.
 
-## The organisation
-- Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG). Treat SICDP as current, but confirm.
+## Confirmed by Hasanor (2 Nov 2026): use this as the source of truth for public copy
+- Name: Statecraft Institute for Climate and Development Policy (SICDP). Final. (SICG is the old name; never use it publicly.)
+- Who we are: SICDP is an independent, youth-led think tank based in Dhaka, Bangladesh. We work at the intersection of climate governance and state capacity in South Asia.
+- Motto: "Instituta Firma, Res Publica Firma."
+- What we try to do: We study why climate and digital governance fall short in practice, and we ground our answers in field evidence and institutional analysis.
+- Programmes:
+  - C30 Agenda: first major field research project. Audits where climate-related SDG targets failed to deliver and proposes climate priorities beyond 2030, based on fieldwork in four Bangladeshi sites facing salinity, riverbank erosion, drought and flash flooding.
+  - The Adaptation Lab: applied research arm. Flagship project "Charting Displacement": riverbank erosion and char community displacement along the Jamuna and Padma.
+  - The Statecraft Papers: planned working paper series. NOT yet launched.
+- Plans:
+  - RDA Synergy Week 2027: proposed week-long programme with the Rural Development Academy (RDA), Bogura, 28 December 2026 to 2 January 2027. TEDx event, three-day Char Research Bootcamp for about 80 students from eight universities, and a policy symposium, then a synthesis phase producing a field report, a policy brief and working papers. SICDP organises, RDA hosts, its Char Development Research Centre advises. Status: proposed, not approved.
+  - Publish working papers openly through the website, SSRN and Zenodo.
+  - Publish policy briefs and op-eds ahead of a cross-border academic roundtable with Indian institutions, targeted for December 2026.
+  - Build long-term partnerships with South Asian research institutions.
+- Contact: thestatecraftinstitute@gmail.com
+- Implication for the site: there are no published outputs yet. Everything above under "Plans" must be labelled as proposed / planned / forthcoming.
+
+## The organisation (background from internal documents)
+- Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG).
 - Youth-led policy think tank, Dhaka, founded 2026 by Md. Imam Hossain Shihab (Founder and Executive Director). Hasanor leads design in the Creative Studio and wants a leadership role.
 - Core thesis: "borrowed capacity". Bangladesh outsources state functions (climate governance, digital services) to NGOs, donors and consultants. Goal: "built capacity". Vision line: "States that build, not borrow, the capacity to govern their own future." Tagline in an earlier draft: "Southern Perspectives. Global Policy."
 - Two research tracks:
@@ -61,7 +78,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
 5. Build on Shihab's draft or start fresh in the new purple brand? Has Shihab agreed to the new brand?
 6. Deadline (ideally before the RDA proposal goes out)?
 7. Names, roles, photos and consent for leadership, team and advisory board?
-8. Final organisation name (SICDP vs SICG) and short name?
+8. ~~Final organisation name~~ Answered: SICDP (2 Nov 2026).
 
 ## How to start a session
 1. Read this file and the key documents in `docs/internal/`.
