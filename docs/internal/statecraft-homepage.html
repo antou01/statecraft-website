@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Statecraft Institute — SICDP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1812;
+    --navy:#152238;
+    --navy-2:#1D3050;
+    --navy-3:#26456e;
+    --paper:#EFE9D8;
+    --paper-2:#E3DBC2;
+    --paper-3:#d9cfae;
+    --seal:#9C2B2B;
+    --seal-2:#c0433f;
+    --capacity:#3E6B52;
+    --brass:#B08D57;
+    --muted:#8A8368;
+    --muted-navy:#7f93b3;
+    --cream-text:#EFE9D8;
+    --max:1180px;
+    --tab-w: 3.1rem;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Newsreader',serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.04em;
+  }
+
+  a{color:inherit;}
+
+  ::selection{background:var(--seal); color:var(--paper);}
+
+  :focus-visible{
+    outline:2px solid var(--seal);
+    outline-offset:3px;
+  }
+
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 1.75rem;
+  }
+  @media (min-width:900px){
+    .wrap{ padding-right: calc(1.75rem + var(--tab-w)); }
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--seal);
+  }
+  .section-dark .eyebrow{ color: var(--seal-2); }
+
+  .exhibit-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    margin-bottom:0.9rem;
+  }
+  .exhibit-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:currentColor;
+    opacity:0.35;
+  }
+  .section-dark .exhibit-label{ color: var(--muted-navy); }
+
+  /* ---------- TAB RAIL ---------- */
+  .tab-rail{
+    position:fixed;
+    top:0; right:0;
+    height:100vh;
+    width:var(--tab-w);
+    z-index:50;
+    display:none;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-content:center;
+    gap:0.6rem;
+  }
+  @media (min-width:900px){ .tab-rail{ display:flex; } }
+
+  .tab{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--paper);
+    background:var(--navy-2);
+    border:1px solid var(--brass);
+    border-right:none;
+    padding:0.75rem 0.55rem;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    border-radius:4px 0 0 4px;
+    transition:transform 0.18s ease, background 0.18s ease, padding-right 0.18s ease;
+    white-space:nowrap;
+  }
+  .tab:hover, .tab:focus-visible{
+    background:var(--seal);
+    transform:rotate(180deg) translateY(-2px);
+  }
+  .tab.active{
+    background:var(--paper);
+    color:var(--navy);
+    border-color:var(--paper);
+    padding-right:0.85rem;
+  }
+
+  /* mobile pill nav */
+  .mobile-nav{
+    position:sticky; top:0; z-index:50;
+    display:flex; gap:0.5rem;
+    overflow-x:auto;
+    padding:0.7rem 1rem;
+    background:var(--navy);
+    border-bottom:1px solid var(--brass);
+  }
+  @media (min-width:900px){ .mobile-nav{ display:none; } }
+  .mobile-nav a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--paper);
+    text-decoration:none;
+    background:var(--navy-2);
+    border:1px solid var(--brass);
+    padding:0.45rem 0.7rem;
+    border-radius:3px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding:5rem 0;
+    position:relative;
+  }
+  .section-dark{ background:var(--navy); color:var(--paper); }
+  .section-light{ background:var(--paper); color:var(--ink); }
+  .section-light-2{ background:var(--paper-2); color:var(--ink); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse at 15% -10%, rgba(176,141,87,0.18), transparent 55%),
+      var(--navy);
+    color:var(--paper);
+    padding:4.5rem 0 4rem;
+    border-bottom:1px solid var(--brass);
+  }
+  .file-tag{
+    display:inline-block;
+    font-size:0.68rem;
+    color:var(--muted-navy);
+    border:1px solid var(--muted-navy);
+    padding:0.25rem 0.6rem;
+    border-radius:3px;
+    margin-bottom:2rem;
+  }
+  .wordmark-wrap{ position:relative; display:inline-block; }
+  .wordmark{
+    font-size:clamp(3rem, 9vw, 6.4rem);
+    font-weight:600;
+    line-height:0.95;
+    color:var(--paper);
+    position:relative;
+    z-index:2;
+  }
+  .wordmark-copy{
+    position:absolute;
+    top:0.14em; left:0.05em;
+    font-size:clamp(3rem, 9vw, 6.4rem);
+    font-weight:600;
+    line-height:0.95;
+    color:var(--seal);
+    opacity:0.55;
+    z-index:1;
+    user-select:none;
+  }
+  .full-name{
+    margin-top:1.1rem;
+    font-size:0.85rem;
+    color:var(--muted-navy);
+    text-transform:uppercase;
+    letter-spacing:0.13em;
+  }
+  .tagline{
+    font-family:'Newsreader',serif;
+    font-style:italic;
+    font-size:clamp(1.3rem,2.4vw,1.7rem);
+    color:var(--paper);
+    margin-top:1.9rem;
+    max-width:32ch;
+  }
+  .hero-copy{
+    margin-top:1.3rem;
+    max-width:46ch;
+    color:var(--muted-navy);
+    font-size:1.02rem;
+  }
+  .hero-ctas{
+    margin-top:2.3rem;
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    text-decoration:none;
+    padding:0.85rem 1.3rem;
+    border-radius:3px;
+    display:inline-block;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{ background:var(--seal); color:var(--paper); }
+  .btn-primary:hover{ background:var(--seal-2); transform:translateY(-2px); }
+  .btn-ghost{ border:1px solid var(--brass); color:var(--paper); }
+  .btn-ghost:hover{ background:var(--navy-2); transform:translateY(-2px); }
+
+  /* ---------- FEATURED STRIP ---------- */
+  .featured{
+    background:var(--navy-2);
+    border-bottom:1px solid var(--brass);
+  }
+  .featured-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.2rem;
+    margin-top:1.4rem;
+  }
+  .feat-card{
+    background:var(--navy-3);
+    border:1px solid var(--brass);
+    border-radius:5px;
+    padding:1.4rem;
+    position:relative;
+  }
+  .feat-card h3{ color:var(--paper); font-size:1.25rem; margin-top:0.5rem;}
+  .feat-card p{ color:var(--muted-navy); font-size:0.92rem; margin-top:0.5rem;}
+
+  /* ---------- STAMP ---------- */
+  .stamp{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.62rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    border:1.5px solid var(--seal);
+    color:var(--seal);
+    padding:0.25rem 0.55rem;
+    border-radius:2px;
+    transform:rotate(-4deg);
+    display:inline-block;
+    position:absolute;
+    top:1rem; right:1rem;
+    background:rgba(156,43,43,0.06);
+  }
+  .stamp.confirmed{ border-color:var(--capacity); color:var(--capacity); background:rgba(62,107,82,0.08);}
+  .stamp.placeholder{ border-color:var(--muted); color:var(--muted); background:rgba(138,131,104,0.08);}
+  .section-dark .stamp.placeholder{ border-color:var(--muted-navy); color:var(--muted-navy); background:transparent;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:3rem;
+    margin-top:2rem;
+  }
+  @media (max-width:800px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-lede{
+    font-family:'Newsreader',serif;
+    font-size:clamp(1.4rem,2.6vw,1.9rem);
+    line-height:1.35;
+  }
+  .about-lede em{ color:var(--seal); font-style:italic; }
+  .about-side{ display:flex; flex-direction:column; gap:1.8rem; }
+  .about-block{
+    border-left:3px solid var(--brass);
+    padding-left:1.2rem;
+  }
+  .about-block h4{ font-size:1.05rem; margin-bottom:0.4rem; }
+  .about-block p{ font-size:0.94rem; color:var(--ink); opacity:0.85; }
+
+  /* ---------- TRACKS ---------- */
+  .tracks-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.6rem;
+    margin-top:2rem;
+  }
+  @media (max-width:750px){ .tracks-grid{ grid-template-columns:1fr; } }
+  .track-card{
+    background:var(--paper);
+    border:1px solid var(--paper-3);
+    border-radius:6px;
+    padding:2rem;
+    position:relative;
+  }
+  .track-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;
+    color:var(--seal);
+    margin-bottom:1rem;
+    display:block;
+  }
+  .track-card h3{ font-size:1.5rem; margin-bottom:0.7rem; }
+  .track-card p{ font-size:0.95rem; opacity:0.85; }
+  .track-anchor{
+    margin-top:1.1rem;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--capacity);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- PROGRAMS ---------- */
+  .programs-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.4rem;
+    margin-top:2rem;
+  }
+  @media (max-width:900px){ .programs-grid{ grid-template-columns:1fr; } }
+  .program-card{
+    background:var(--navy-2);
+    border:1px solid var(--brass);
+    border-radius:6px;
+    padding:1.6rem;
+  }
+  .program-card h4{ color:var(--paper); font-size:1.15rem; }
+  .program-card p{ color:var(--muted-navy); font-size:0.9rem; margin-top:0.6rem; }
+
+  .lab-block{
+    margin-top:3rem;
+    border-top:1px dashed var(--brass);
+    padding-top:2rem;
+  }
+  .lab-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:1rem; flex-wrap:wrap; }
+  .lab-head h4{ color:var(--paper); font-size:1.1rem; }
+  .carousel-controls{ display:flex; gap:0.5rem; }
+  .carousel-btn{
+    width:2.2rem; height:2.2rem;
+    border-radius:50%;
+    border:1px solid var(--brass);
+    background:transparent;
+    color:var(--paper);
+    cursor:pointer;
+    font-size:1rem;
+    display:flex; align-items:center; justify-content:center;
+    transition:background 0.15s ease;
+  }
+  .carousel-btn:hover{ background:var(--navy-3); }
+
+  .carousel{
+    display:flex;
+    gap:1.2rem;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding:1.4rem 0.2rem 0.6rem;
+    margin:0 -0.2rem;
+    scrollbar-width:thin;
+  }
+  .carousel::-webkit-scrollbar{ height:6px; }
+  .carousel::-webkit-scrollbar-thumb{ background:var(--brass); border-radius:3px; }
+
+  .lab-card{
+    scroll-snap-align:start;
+    flex:0 0 220px;
+    background:var(--navy-3);
+    border:1px solid var(--brass);
+    border-radius:6px;
+    padding:1.2rem;
+  }
+  .lab-card .num{ font-family:'IBM Plex Mono',monospace; color:var(--seal-2); font-size:0.78rem; }
+  .lab-card h5{ color:var(--paper); font-family:'Newsreader',serif; font-size:1.05rem; margin-top:0.5rem; font-weight:500;}
+  .lab-card p{ color:var(--muted-navy); font-size:0.85rem; margin-top:0.4rem; }
+
+  /* ---------- CARD GRIDS (field notes / briefs / roundtables) ---------- */
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.3rem;
+    margin-top:2rem;
+  }
+  .doc-card{
+    background:var(--paper-2);
+    border:1px dashed var(--muted);
+    border-radius:5px;
+    padding:1.5rem;
+    position:relative;
+  }
+  .doc-card .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.65rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--capacity);
+  }
+  .doc-card h4{ font-size:1.15rem; margin-top:0.6rem; line-height:1.3; }
+  .doc-card p{ font-size:0.88rem; opacity:0.8; margin-top:0.55rem; }
+  .doc-card .meta{
+    margin-top:0.9rem;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--muted);
+  }
+
+  /* ---------- COMMENTARY CAROUSEL (light) ---------- */
+  .carousel-light{
+    display:flex; gap:1.2rem; overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding:1.4rem 0.2rem 0.6rem; margin:0 -0.2rem;
+  }
+  .carousel-light::-webkit-scrollbar{ height:6px; }
+  .carousel-light::-webkit-scrollbar-thumb{ background:var(--muted); border-radius:3px; }
+  .comm-card{
+    scroll-snap-align:start;
+    flex:0 0 270px;
+    background:var(--paper);
+    border:1px solid var(--paper-3);
+    border-radius:6px;
+    padding:1.4rem;
+    position:relative;
+  }
+  .comm-card .tag{ font-family:'IBM Plex Mono',monospace; font-size:0.65rem; text-transform:uppercase; color:var(--seal); }
+  .comm-card h4{ font-size:1.1rem; margin-top:0.6rem; line-height:1.3; }
+  .comm-card p{ font-size:0.86rem; opacity:0.78; margin-top:0.5rem; }
+  .carousel-btn-light{
+    width:2.2rem; height:2.2rem; border-radius:50%;
+    border:1px solid var(--muted); background:transparent; color:var(--ink);
+    cursor:pointer; font-size:1rem;
+    display:flex; align-items:center; justify-content:center;
+    transition:background 0.15s ease;
+  }
+  .carousel-btn-light:hover{ background:var(--paper-3); }
+
+  /* ---------- PUBLICATIONS ---------- */
+  .pub-row{
+    display:flex; flex-direction:column; gap:1.2rem; margin-top:2rem;
+  }
+  .pub-item{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:1.5rem;
+    align-items:center;
+    background:var(--navy-2);
+    border:1px solid var(--brass);
+    border-radius:6px;
+    padding:1.4rem 1.6rem;
+  }
+  @media (max-width:700px){ .pub-item{ grid-template-columns:1fr; } }
+  .pub-no{ font-family:'IBM Plex Mono',monospace; color:var(--seal-2); font-size:0.85rem; }
+  .pub-item h4{ color:var(--paper); font-size:1.2rem; }
+  .pub-item p{ color:var(--muted-navy); font-size:0.85rem; margin-top:0.4rem; }
+
+  /* ---------- CONTRIBUTE ---------- */
+  .contribute-box{
+    margin-top:2rem;
+    border:1px solid var(--paper-3);
+    border-radius:8px;
+    padding:3rem 2rem;
+    text-align:center;
+    background:var(--paper-2);
+  }
+  .contribute-box p{ max-width:42ch; margin:0.8rem auto 0; opacity:0.8; }
+  .contribute-box .btn{ margin-top:1.6rem; }
+
+  /* ---------- REGIONAL WIDGET ---------- */
+  .regional-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.3rem;
+    margin-top:2rem;
+  }
+  @media (max-width:800px){ .regional-grid{ grid-template-columns:1fr; } }
+  .region-card{
+    background:var(--navy-2);
+    border:1px solid var(--brass);
+    border-radius:6px;
+    padding:1.5rem;
+  }
+  .region-card h4{ color:var(--paper); font-size:1.15rem; margin-bottom:0.9rem; }
+  .metric{
+    display:flex; justify-content:space-between;
+    font-size:0.85rem; color:var(--muted-navy);
+    padding:0.45rem 0;
+    border-top:1px dotted rgba(176,141,87,0.4);
+  }
+  .metric span:last-child{ color:var(--paper); font-family:'IBM Plex Mono',monospace; }
+  .widget-note{
+    margin-top:1.2rem;
+    font-size:0.75rem;
+    color:var(--muted-navy);
+    font-style:italic;
+  }
+
+  /* ---------- SOCIALS + FOOTER ---------- */
+  .socials-row{
+    display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.6rem;
+  }
+  .social-pill{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    border:1px solid var(--paper-3);
+    padding:0.6rem 1.1rem;
+    border-radius:20px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .social-pill:hover{ background:var(--paper-3); }
+
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:2.5rem 0;
+  }
+  .footer-grid{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;
+    font-size:0.85rem;
+  }
+  .footer-grid .mono{ color:var(--muted-navy); font-size:0.72rem; }
+
+  section h2.section-title{
+    font-size:clamp(1.8rem,3.4vw,2.5rem);
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav">
+  <a href="#about">About Us</a>
+  <a href="#future">The Future We Imagine</a>
+  <a href="#mission">Vision &amp; Mission</a>
+  <a href="#featured">Featured</a>
+  <a href="#socials">Socials</a>
+</div>
+
+<nav class="tab-rail" aria-label="Section navigation">
+  <a class="tab" data-target="about" href="#about">About Us</a>
+  <a class="tab" data-target="future" href="#future">The Future We Imagine</a>
+  <a class="tab" data-target="mission" href="#mission">Vision &amp; Mission</a>
+  <a class="tab" data-target="featured" href="#featured">Featured</a>
+  <a class="tab" data-target="socials" href="#socials">Socials</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="file-tag mono">FILE NO. SICDP&ndash;2026 &middot; DHAKA, BANGLADESH</span>
+    <div class="wordmark-wrap">
+      <span class="wordmark-copy" aria-hidden="true">STATECRAFT</span>
+      <h1 class="wordmark">STATECRAFT</h1>
+    </div>
+    <p class="full-name mono">Statecraft Institute for Climate &amp; Development Policy</p>
+    <p class="tagline">Southern Perspectives. Global Policy.</p>
+    <p class="hero-copy">A youth-led policy institute based in Dhaka, working on climate governance and institutional capacity across South Asia. We study what states have quietly outsourced &mdash; and make the case for building it back in.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#roundtables">Enter the Dossier</a>
+      <a class="btn btn-ghost" href="#contribute">Make Your Case</a>
+    </div>
+  </div>
+</header>
+
+<!-- FEATURED -->
+<section class="section-dark featured" id="featured">
+  <div class="wrap">
+    <span class="eyebrow">Featured &mdash; Our Best Work</span>
+    <div class="featured-grid">
+      <div class="feat-card">
+        <span class="stamp confirmed">Confirmed</span>
+        <span class="mono" style="font-size:0.72rem;color:var(--muted-navy);">Dec 2026 &middot; IIT Kharagpur</span>
+        <h3>The IIT Kharagpur &times; Statecraft Roundtable</h3>
+        <p>A cross-border academic roundtable built around our working paper on premature automation in South Asian public services.</p>
+      </div>
+      <div class="feat-card">
+        <span class="stamp placeholder">Forthcoming</span>
+        <span class="mono" style="font-size:0.72rem;color:var(--muted-navy);">Statecraft Papers &middot; No. 01</span>
+        <h3>Premature Automation</h3>
+        <p>Institutional preconditions for AI-enabled public services in South Asia &mdash; with Shuaib Ahmed Araf, Dept. of Public Administration, University of Dhaka.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-light" id="about">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit A</div>
+    <h2 class="section-title">About the Institute</h2>
+    <div class="about-grid">
+      <p class="about-lede">The Bangladeshi state doesn&rsquo;t lack a climate strategy. It has outsourced the job of having one &mdash; to NGOs, consultants, and donor programs. We call this <em>borrowed capacity</em>, and it&rsquo;s the problem this institute exists to name and reverse.</p>
+      <div class="about-side">
+        <div class="about-block" id="future">
+          <h4 class="mono" style="text-transform:uppercase;font-size:0.85rem;letter-spacing:0.06em;">The Future We Imagine</h4>
+          <p>A South Asia where governments hold the institutional capacity to govern climate risk and public technology directly &mdash; not on loan from the organizations meant to be temporary.</p>
+        </div>
+        <div class="about-block" id="mission">
+          <h4 class="mono" style="text-transform:uppercase;font-size:0.85rem;letter-spacing:0.06em;">Vision &amp; Mission</h4>
+          <p><strong>Vision:</strong> States that build, not borrow, the capacity to govern their own future.<br><strong>Mission:</strong> Rigorous, field-grounded research that makes the case for institution-building &mdash; not another parallel program.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH TRACKS -->
+<section class="section-light-2" id="tracks">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit B</div>
+    <h2 class="section-title">Research Tracks</h2>
+    <div class="tracks-grid">
+      <div class="track-card">
+        <span class="track-num mono">TRACK 01</span>
+        <h3>Climate &amp; Governance</h3>
+        <p>How climate governance functions have migrated from state institutions to NGOs and donor-funded programs &mdash; and what it would take to bring them back.</p>
+        <div class="track-anchor mono">Anchored by: Field-to-Negotiation Research Program</div>
+      </div>
+      <div class="track-card">
+        <span class="track-num mono">TRACK 02</span>
+        <h3>Technology &amp; State Capacity</h3>
+        <p>Why AI-enabled public services keep arriving before the institutional groundwork that would make them work &mdash; the premature automation problem.</p>
+        <div class="track-anchor mono">Anchored by: Premature Automation (working paper)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLAGSHIP PROGRAMS -->
+<section class="section-dark" id="programs">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit C</div>
+    <h2 class="section-title">Flagship Programs</h2>
+    <div class="programs-grid">
+      <div class="program-card">
+        <h4>Field-to-Negotiation Research Program</h4>
+        <p>Tracing how field-level climate realities do &mdash; or don&rsquo;t &mdash; make it into the rooms where negotiations happen.</p>
+      </div>
+      <div class="program-card">
+        <h4>The Adaptation Lab</h4>
+        <p>Four tracks turning adaptation research into deployable, fundable pilots. See below.</p>
+      </div>
+      <div class="program-card">
+        <h4>Digital Governance Research Program</h4>
+        <p>Our newer research line, examining institutional readiness for digital and AI-enabled public services.</p>
+      </div>
+    </div>
+
+    <div class="lab-block">
+      <div class="lab-head">
+        <h4 class="mono" style="text-transform:uppercase; font-size:0.8rem; letter-spacing:0.08em;">The Adaptation Lab &mdash; Four Tracks</h4>
+        <div class="carousel-controls">
+          <button class="carousel-btn" aria-label="Scroll left" data-carousel="lab" data-dir="-1">&#8592;</button>
+          <button class="carousel-btn" aria-label="Scroll right" data-carousel="lab" data-dir="1">&#8594;</button>
+        </div>
+      </div>
+      <div class="carousel" id="lab-carousel">
+        <div class="lab-card"><span class="num">01</span><h5>The Innovation Atlas</h5><p>Mapping where genuine adaptation innovation is already happening on the ground.</p></div>
+        <div class="lab-card"><span class="num">02</span><h5>Prototype Pilots</h5><p>Small, fast, testable interventions built directly with local partners.</p></div>
+        <div class="lab-card"><span class="num">03</span><h5>The Last Mile</h5><p>Getting proven adaptation tools to the communities furthest from institutional reach.</p></div>
+        <div class="lab-card"><span class="num">04</span><h5>Recognition &amp; Reach</h5><p>Getting credit &mdash; and funding &mdash; for adaptation work that usually goes unseen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIELD NOTE DIARIES -->
+<section class="section-light" id="field-notes">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit D</div>
+    <h2 class="section-title">Field Note Diaries</h2>
+    <p class="mono" style="font-size:0.8rem;color:var(--muted);margin-top:0.6rem;">From Field to Negotiation &mdash; short dispatches from ongoing fieldwork.</p>
+    <div class="card-grid">
+      <div class="doc-card">
+        <span class="stamp placeholder">Placeholder</span>
+        <span class="tag">Field Dispatch</span>
+        <h4>Cox&rsquo;s Bazar &mdash; Coastal Adaptation Fieldwork</h4>
+        <p>Sample entry format &mdash; short, dated notes from research trips will populate here.</p>
+        <div class="meta">FORMAT SAMPLE</div>
+      </div>
+      <div class="doc-card">
+        <span class="stamp placeholder">Placeholder</span>
+        <span class="tag">Field Dispatch</span>
+        <h4>Dhaka &mdash; Ministry Consultations</h4>
+        <p>Sample entry format &mdash; short, dated notes from research trips will populate here.</p>
+        <div class="meta">FORMAT SAMPLE</div>
+      </div>
+      <div class="doc-card">
+        <span class="stamp placeholder">Placeholder</span>
+        <span class="tag">Field Dispatch</span>
+        <h4>Sundarbans &mdash; Community Resilience Mapping</h4>
+        <p>Sample entry format &mdash; short, dated notes from research trips will populate here.</p>
+        <div class="meta">FORMAT SAMPLE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYSIS & COMMENTARY -->
+<section class="section-light-2" id="commentary">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit E</div>
+    <div class="lab-head">
+      <h2 class="section-title">Analysis &amp; Commentary</h2>
+      <div class="carousel-controls">
+        <button class="carousel-btn-light" aria-label="Scroll left" data-carousel="comm" data-dir="-1">&#8592;</button>
+        <button class="carousel-btn-light" aria-label="Scroll right" data-carousel="comm" data-dir="1">&#8594;</button>
+      </div>
+    </div>
+    <div class="carousel-light" id="comm-carousel">
+      <div class="comm-card">
+        <span class="stamp placeholder">Sample</span>
+        <span class="tag">Op-ed</span>
+        <h4>The Cost of Borrowed Capacity</h4>
+        <p>Placeholder blurb &mdash; illustrating the format for short-form commentary pieces.</p>
+      </div>
+      <div class="comm-card">
+        <span class="stamp placeholder">Sample</span>
+        <span class="tag">Commentary</span>
+        <h4>Why AI Can&rsquo;t Fix What Institutions Haven&rsquo;t Built</h4>
+        <p>Placeholder blurb &mdash; illustrating the format for short-form commentary pieces.</p>
+      </div>
+      <div class="comm-card">
+        <span class="stamp placeholder">Sample</span>
+        <span class="tag">Commentary</span>
+        <h4>COP Season and the NGO Proxy Problem</h4>
+        <p>Placeholder blurb &mdash; illustrating the format for short-form commentary pieces.</p>
+      </div>
+      <div class="comm-card">
+        <span class="stamp placeholder">Sample</span>
+        <span class="tag">Op-ed</span>
+        <h4>Reading the Adaptation Budget</h4>
+        <p>Placeholder blurb &mdash; illustrating the format for short-form commentary pieces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POLICY BRIEFS -->
+<section class="section-light" id="briefs">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit F</div>
+    <h2 class="section-title">Policy Briefs</h2>
+    <div class="card-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+      <div class="doc-card">
+        <span class="stamp placeholder">Sample</span>
+        <span class="tag">Policy Brief</span>
+        <h4>Institutionalizing Climate Negotiation Capacity: A Brief for Ministries</h4>
+        <p>Placeholder &mdash; format sample for a short, decision-maker-facing brief.</p>
+      </div>
+      <div class="doc-card">
+        <span class="stamp placeholder">Sample</span>
+        <span class="tag">Policy Brief</span>
+        <h4>AI-Enabled Public Services: Preconditions Before Pilots</h4>
+        <p>Placeholder &mdash; format sample tied to the premature automation research line.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUNDTABLES -->
+<section class="section-dark" id="roundtables">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit G</div>
+    <h2 class="section-title">Roundtables</h2>
+    <div class="card-grid">
+      <div class="doc-card" style="background:var(--navy-2); border-color:var(--brass);">
+        <span class="stamp confirmed">Confirmed</span>
+        <span class="tag" style="color:var(--brass);">Dec 2026 &middot; IIT Kharagpur</span>
+        <h4 style="color:var(--paper);">IIT Kharagpur &times; Statecraft Roundtable</h4>
+        <p style="color:var(--muted-navy);">A 90-minute cross-border academic session on premature automation, held under Chatham House Rules.</p>
+        <div class="meta" style="color:var(--muted-navy);">SESSION DOSSIER &mdash; IN PREPARATION</div>
+      </div>
+      <div class="doc-card" style="background:var(--navy-2); border-color:var(--brass);">
+        <span class="stamp placeholder">Forthcoming</span>
+        <span class="tag" style="color:var(--brass);">Date TBD</span>
+        <h4 style="color:var(--paper);">Next Roundtable</h4>
+        <p style="color:var(--muted-navy);">Placeholder slot for the next cross-institutional convening.</p>
+        <div class="meta" style="color:var(--muted-navy);">TO BE ANNOUNCED</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="section-dark" id="papers" style="background:var(--ink);">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit H</div>
+    <h2 class="section-title" style="color:var(--paper);">Publications</h2>
+    <p class="mono" style="font-size:0.8rem;color:var(--muted-navy);margin-top:0.6rem;">The Statecraft Papers</p>
+    <div class="pub-row">
+      <div class="pub-item">
+        <span class="pub-no">No. 01</span>
+        <div>
+          <h4>Premature Automation: Institutional Preconditions for AI-Enabled Public Services in South Asia</h4>
+          <p>With Shuaib Ahmed Araf, Department of Public Administration, University of Dhaka.</p>
+        </div>
+        <span class="stamp placeholder" style="position:static; transform:rotate(0deg);">Forthcoming</span>
+      </div>
+      <div class="pub-item">
+        <span class="pub-no">No. 02</span>
+        <div>
+          <h4>Awaiting First Field Data</h4>
+          <p>Slot reserved for the next paper in the series &mdash; topic under exploration.</p>
+        </div>
+        <span class="stamp placeholder" style="position:static; transform:rotate(0deg);">In Progress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRIBUTE -->
+<section class="section-light-2" id="contribute">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit I</div>
+    <h2 class="section-title">Make Your Case</h2>
+    <div class="contribute-box">
+      <span class="eyebrow">Contribute</span>
+      <h3 style="margin-top:0.6rem;font-size:1.6rem;">Have an argument worth making?</h3>
+      <p>We publish op-eds, analysis, and policy commentary from researchers, practitioners, and students working on climate governance and state capacity in South Asia.</p>
+      <a class="btn btn-primary" href="mailto:contribute@statecraftinstitute.org">Submit to Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONAL COMPARISON WIDGET -->
+<section class="section-dark" id="regional">
+  <div class="wrap">
+    <div class="exhibit-label">Exhibit J</div>
+    <h2 class="section-title">Regional Comparison</h2>
+    <div class="regional-grid">
+      <div class="region-card">
+        <h4>Bangladesh</h4>
+        <div class="metric"><span>Climate functions in-house</span><span>Low</span></div>
+        <div class="metric"><span>NGO-delivered adaptation programs</span><span>High</span></div>
+        <div class="metric"><span>Dedicated digital governance unit</span><span>No</span></div>
+      </div>
+      <div class="region-card">
+        <h4>India</h4>
+        <div class="metric"><span>Climate functions in-house</span><span>Medium</span></div>
+        <div class="metric"><span>NGO-delivered adaptation programs</span><span>Medium</span></div>
+        <div class="metric"><span>Dedicated digital governance unit</span><span>Yes</span></div>
+      </div>
+      <div class="region-card">
+        <h4>Nepal</h4>
+        <div class="metric"><span>Climate functions in-house</span><span>Low</span></div>
+        <div class="metric"><span>NGO-delivered adaptation programs</span><span>High</span></div>
+        <div class="metric"><span>Dedicated digital governance unit</span><span>No</span></div>
+      </div>
+    </div>
+    <p class="widget-note">Illustrative placeholder metrics for layout purposes only &mdash; to be replaced with sourced indicators.</p>
+  </div>
+</section>
+
+<!-- SOCIALS -->
+<section class="section-light" id="socials">
+  <div class="wrap">
+    <div class="exhibit-label">Socials</div>
+    <h2 class="section-title">Follow the Institute</h2>
+    <div class="socials-row">
+      <a class="social-pill" href="#">X / Twitter &mdash; @statecraftinst</a>
+      <a class="social-pill" href="#">LinkedIn</a>
+      <a class="social-pill" href="#">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div style="font-family:'Newsreader',serif; font-size:1.3rem;">Statecraft</div>
+        <div class="mono">Statecraft Institute for Climate &amp; Development Policy &middot; Dhaka, Bangladesh</div>
+      </div>
+      <div class="mono">&copy; 2026 SICDP. Draft layout for internal review.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Carousel scroll buttons
+  document.querySelectorAll('[data-carousel]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id = btn.dataset.carousel === 'lab' ? 'lab-carousel' : 'comm-carousel';
+      const el = document.getElementById(id);
+      const dir = parseInt(btn.dataset.dir,10);
+      el.scrollBy({left: dir * 260, behavior:'smooth'});
+    });
+  });
+
+  // Active tab highlighting
+  const tabs = document.querySelectorAll('.tab');
+  const targets = ['about','future','mission','featured','socials'];
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const id = entry.target.id;
+        tabs.forEach(t=>t.classList.toggle('active', t.dataset.target === id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+  targets.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
