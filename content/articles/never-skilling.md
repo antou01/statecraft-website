@@ -4,6 +4,11 @@ author: Shuaib Ahmed Araf
 written: 2026-09
 thumbnail: media/art/thumb-neverskilling.svg
 note: to be added later
+category: Technology & Society
+date: ''
+time: ''
+author_bio: Member of SICDP; Department of Public Administration, University of Dhaka.
+author_photo: ''
 ---
 
 Never-Skilling, a relatively new term in the age of Artificial Intelligence, simply means that you never learn a particular foundational skill because AI is there to do it for you. In the pre-AI days, if a person had to write an essay, they had to build up an original idea, structure their cases, uphold arguments, defend their points and most importantly make mistakes from which they could improve. But now, they can give a prompt to any LLM, and it will write down that essay within seconds. But this obviously goes beyond simple essays. Design may be going through one of its weakest phases in recent memory, as many designs nowadays are made with generative AI. AI generated designs on logos, posters, and banners are at their peak. A recently popularized term is "vibe coding", where people can give AI some prompts and it will design websites, apps or even simple software for them. This essentially makes learning the basics of a programming language obsolete.

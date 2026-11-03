@@ -47,7 +47,7 @@ def photos(path, widths, square=False):
     if square:
         side = min(im.size); im = ImageOps.fit(im, (side, side), centering=(0.5, 0.35))
     for w, t in zip(widths, targets):
-        c = im.copy(); c.thumbnail((w, w * 2)); c.save(t, 'WEBP', quality=72, method=6)
+        c = im.copy(); c.thumbnail((w, w * 2)); c.save(t, 'WEBP', quality=64 if w <= 800 else 68, method=6)
     return s
 
 def copy_art():
@@ -74,7 +74,7 @@ def lockup(p, which):
     if which == 'header':
         return (f'<img class="logo-light" src="{p}assets/logo/lockup-white.svg" alt="Statecraft Institute for Climate and Development Policy" width="300" height="76">'
                 f'<img class="logo-dark" src="{p}assets/logo/lockup-dark.svg" alt="Statecraft Institute for Climate and Development Policy" width="300" height="76">')
-    return (f'<img class="logo-light" src="{p}assets/logo/lockup-purple.svg" alt="Statecraft Institute for Climate and Development Policy" width="600" height="152">'
+    return (f'<img class="logo-light" src="{p}assets/logo/lockup-light.svg" alt="Statecraft Institute for Climate and Development Policy" width="600" height="152">'
             f'<img class="logo-dark" src="{p}assets/logo/lockup-dark.svg" alt="Statecraft Institute for Climate and Development Policy" width="600" height="152">')
 
 def head(title, desc, p):
@@ -122,18 +122,33 @@ def crest():
     return (f'<svg class="crest" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">'
             f'<path class="fill" d="{top} V48 H0 Z"/><path class="stitch" d="{top}"/></svg>')
 
-def footer(p):
-    svg = {
-      'mail': '<path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/>',
-      'phone': '<path d="M6 3h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2z"/>',
-      'facebook': '<path d="M14 21v-8h3l.5-3.5H14V7.5c0-1 .4-1.7 1.8-1.7h1.8V2.7A20 20 0 0 0 15 2.5c-2.6 0-4.3 1.6-4.3 4.5v2.5H8V13h2.7v8"/>',
-      'instagram': '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8"/>',
-    }
-    def li(key, col, text, label):
-        return f'<li><span class="ic" style="--c:{col}"><svg viewBox="0 0 24 24" role="img" aria-label="{label}">{svg[key]}</svg></span><span class="copy">{E(text)}</span></li>'
-    contact = li('mail', 'var(--coral)', 'thestatecraftinstitute@gmail.com', 'Email') + li('phone', 'var(--teal)', '+880 1812-267679', 'Phone')
-    follow = li('facebook', 'var(--blue)', 'The Statecraft Institute', 'Facebook') + li('instagram', 'var(--saffron)', 'sicdp', 'Instagram')
-    return f'''<footer class="site">{crest()}<div class="body">
+ICON = {
+  'mail': '<path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/>',
+  'phone': '<path d="M6 3h4l2 5-3 2a11 11 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2z"/>',
+  'cal': '<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  'pin': '<path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/>',
+  'clock': '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+  'map': '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
+  'left': '<path d="M15 5l-7 7 7 7"/>', 'right': '<path d="M9 5l7 7-7 7"/>', 'x': '<path d="M6 6l12 12M18 6L6 18"/>',
+  'play': '<path d="M8 5v14l11-7z" stroke="none"/>',
+}
+def ico(name, label=''):
+    lab = f'role="img" aria-label="{label}"' if label else 'aria-hidden="true"'
+    return f'<svg class="ico" viewBox="0 0 24 24" {lab}>{ICON[name]}</svg>'
+
+BRAND = {  # official brand marks, simplified, in their own colours
+  'facebook': '<svg viewBox="0 0 34 34" role="img" aria-label="Facebook"><circle cx="17" cy="17" r="17" fill="#1877F2"/><path fill="#fff" d="M19 27v-8h2.7l.4-3.2H19v-2c0-.9.3-1.6 1.6-1.6h1.6V9.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.4h-2.6V19h2.6v8z"/></svg>',
+  'instagram': '<svg viewBox="0 0 34 34" role="img" aria-label="Instagram"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect width="34" height="34" rx="9" fill="url(#ig)"/><rect x="8" y="8" width="18" height="18" rx="5.5" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="17" cy="17" r="4.3" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="22.4" cy="11.6" r="1.4" fill="#fff"/></svg>',
+  'youtube': '<svg viewBox="0 0 34 34" role="img" aria-label="YouTube"><rect x="1" y="7" width="32" height="20" rx="6" fill="#FF0000"/><path fill="#fff" d="M14 12.5v9l8-4.5z"/></svg>',
+}
+
+def footer(p, pre=''):
+    contact = (f'<li><span class="ic" style="--c:var(--coral)">{ico("mail", "Email")}</span><span class="copy">thestatecraftinstitute@gmail.com</span></li>'
+               f'<li><span class="ic" style="--c:var(--teal)">{ico("phone", "Phone")}</span><span class="copy">+880 1812-267679</span></li>')
+    follow = ''.join(f'<li><span class="brand">{BRAND[k]}</span><span>{t}</span></li>' for k, t in
+                     [('facebook', 'The Statecraft Institute'), ('instagram', 'sicdp'), ('youtube', 'YouTube channel (coming soon)')])
+    style = f' style="--pre-footer:{pre}"' if pre else ''
+    return f'''<footer class="site"{style}>{crest()}<div class="body">
 <div class="wrap cols">
 <div><img class="lock" src="{p}assets/logo/lockup-dark.svg" alt="Statecraft Institute for Climate and Development Policy" width="230" height="58">
 <p class="motto" style="margin-top:14px">Instituta Firma, Res Publica Firma</p></div>
@@ -147,20 +162,21 @@ def footer(p):
 </html>
 '''
 
-def page(path, title, desc, current, body, p, mast_title=None, eyebrow=None):
-    html_ = head(title, desc, p) + header(p, current) + masthead(p, mast_title, eyebrow) + '<main>' + body + '</main>' + footer(p)
+def page(path, title, desc, current, body, p, mast_title=None, eyebrow=None, mast=True, pre_footer=''):
+    html_ = head(title, desc, p) + header(p, current) + (masthead(p, mast_title, eyebrow) if mast else '') + '<main>' + body + '</main>' + footer(p, pre_footer)
     full = os.path.join(SITE, path); os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full, 'w', encoding='utf-8').write(html_)
 
-def photo_fig(item, p, link=None, viewer=False):
-    s = photos(item['photo'], [480, 960, 1600])
+def photo_fig(item, p, link=None, viewer=False, big=False):
+    s = photos(item['photo'], [640, 1280])
     meta = f'{item["place"]} · {item["date"]}'
-    img = (f'<div class="frame"><img src="{p}assets/photos/{s}-960.webp" srcset="{p}assets/photos/{s}-480.webp 480w, {p}assets/photos/{s}-960.webp 960w" '
-           f'sizes="(max-width: 480px) 100vw, (max-width: 860px) 50vw, 380px" alt="{E(item["caption"])}" loading="lazy" decoding="async" width="960" height="720"></div>')
+    sizes = '(max-width: 860px) 100vw, 380px' if big else '(max-width: 480px) 100vw, (max-width: 860px) 50vw, 380px'
+    img = (f'<div class="frame"><img src="{p}assets/photos/{s}-640.webp" srcset="{p}assets/photos/{s}-640.webp 640w, {p}assets/photos/{s}-1280.webp 1280w" '
+           f'sizes="{sizes}" alt="{E(item["caption"])}" loading="lazy" decoding="async" width="640" height="480"></div>')
     cap = f'<figcaption>{E(item["caption"])}<span>{E(meta)}</span></figcaption>'
     if viewer:
-        return (f'<figure><button type="button" data-full="{p}assets/photos/{s}-1600.webp" data-alt="{E(item["caption"])}" data-meta="{E(meta)}" '
-                f'aria-label="Open photo: {E(item["caption"])}">{img}</button>{cap}</figure>')
+        return (f'<figure><button type="button" data-full="{p}assets/photos/{s}-1280.webp" data-alt="{E(item["caption"])}" data-place="{E(item["place"])}" '
+                f'data-date="{E(str(item["date"]))}" data-time="{E(str(item.get("time") or ""))}" aria-label="Open photo: {E(item["caption"])}">{img}</button>{cap}</figure>')
     return f'<figure><a href="{link}">{img}</a>{cap}</figure>'
 
 def articles():
@@ -176,7 +192,7 @@ def articles():
 def events():
     out = []
     for f in sorted(glob.glob(os.path.join(ROOT, 'content/events/*.md'))):
-        meta, body = front(f); meta['body'] = body; out.append(meta)
+        meta, body = front(f); meta['body'] = body; meta['slug'] = slug_of(f); out.append(meta)
     return sorted(out, key=lambda e: str(e['date']), reverse=True)
 
 def nice_date(d):
@@ -184,32 +200,40 @@ def nice_date(d):
 
 # ---------------------------------------------------------------- home
 def home():
-    p = ''; H = load('home.yml'); F = load('field-diaries.yml')
+    p = ''; H = load('home.yml'); F = load('field-diaries.yml'); EV = events()
     heroes = ''
     for k, h in enumerate(H['heroes']):
         s = photos(h['photo'], [768, 1280, 1920]); cap = f'{h["caption"]} · {h["place"]} · {h["date"]}'
         heroes += (f'<img class="{"show" if k == 0 else ""}" src="assets/photos/{s}-1280.webp" srcset="assets/photos/{s}-768.webp 768w, assets/photos/{s}-1280.webp 1280w, assets/photos/{s}-1920.webp 1920w" '
                    f'sizes="(max-width: 860px) 100vw, 600px" alt="{E(h["caption"])}" data-caption="{E(cap)}" width="1280" height="960" {"fetchpriority=high" if k == 0 else "loading=lazy"}>')
     first = H['heroes'][0]
-    grid = ''.join(photo_fig(i, p, 'field-diaries.html') for i in F['photos'] if i.get('home'))
+    grid = ''.join(photo_fig(i, p, 'field-diaries.html', big=True) for i in F['photos'] if i.get('home'))
     arts = ''.join(f'<a class="article-card" href="articles/{a["slug"]}.html"><div class="thumb">{art(a["thumbnail"], "", p)}</div>'
                    f'<h3>{E(a["title"])}</h3><p>{E(a["first"])}</p><span class="label">{E(a["author"])} · {E(a["when"])}</span></a>' for a in articles())
     hazards = ''.join(f'<figure>{art("media/art/"+n+".svg", l, p)}<figcaption>{l}</figcaption></figure>' for n, l in
                       [('hazard-salinity', 'Coastal salinity'), ('hazard-erosion', 'Riverine erosion'), ('hazard-drought', 'Drought'), ('hazard-haor', 'Haor flash floods')])
     steps = ''.join(f'<li>{art("media/art/"+n+".svg", "", p)}<span>{l}</span></li>' for n, l in
                     [('lab-intake', 'Intake'), ('lab-casework', 'Active case work'), ('lab-review', 'After-action review'), ('lab-dispatch', 'Published dispatch')])
+    ev = EV[0] if EV else None
+    feature = ''
+    if ev:
+        ph = (f'<img src="assets/photos/{photos(ev["photo"], [640, 1280])}-640.webp" alt="" style="border-radius:12px;aspect-ratio:16/10;object-fit:cover;width:100%">'
+              if ev.get('photo') else '<div class="photo-slot">Photo from the event</div>')
+        feature = (f'<a class="feature" href="events.html#{ev["slug"]}">{ph}<div><span class="label">{ico("cal")} {nice_date(ev["date"])}</span>'
+                   f'<h3>{E(ev["title"])}</h3><p>{E(ev["summary"])}</p><span class="more">Details</span></div></a>')
     coming = ''.join(f'<li><strong>{E(c["title"])}</strong><span class="label">{E(c["label"])}</span></li>' for c in H['coming_up'])
     rays = ''.join(f'<path class="s ray" style="--i:{i}" d="M{300+44*math.cos(math.radians(a)):.1f} {150-44*math.sin(math.radians(a)):.1f} L{300+60*math.cos(math.radians(a)):.1f} {150-60*math.sin(math.radians(a)):.1f}"/>'
                    for i, a in enumerate((15, 45, 70, 90, 110, 135, 165)))
     skyline = f'''<svg class="skyline" viewBox="0 0 600 190" role="img" aria-label="A small house with solar panels, a wind turbine and a building under a rising sun">
 <defs><clipPath id="horizon"><rect x="0" y="0" width="600" height="150"/></clipPath></defs>
-<g clip-path="url(#horizon)"><g class="sun"><circle class="s" cx="300" cy="150" r="34"/>{rays}</g></g>
+<g clip-path="url(#horizon)"><g class="sun"><circle class="s sunfill" cx="300" cy="150" r="34"/>{rays}</g></g>
 <path class="s" d="M10 150 H590"/><path class="s d" d="M30 168 Q 120 160 210 168 T 390 168 T 570 168"/>
-<g transform="translate(80 0)"><path class="s" d="M0 150 V112 L28 92 L56 112 V150"/><path class="s d" d="M10 104 L28 94 L46 104"/><path class="s" d="M20 150 V130 H34 V150"/></g>
-<g transform="translate(205 0)"><path class="s" d="M30 150 L33 74 L36 150"/><g class="blades"><path class="s" d="M33 74 L33 40"/><path class="s" d="M33 74 L62 91"/><path class="s" d="M33 74 L4 91"/><circle class="s" cx="33" cy="74" r="3"/></g></g>
-<g transform="translate(420 0)"><path class="s" d="M0 150 V78 H46 V150"/><path class="s d" d="M10 92 H36 M10 106 H36 M10 120 H36 M10 134 H36"/></g>
-<g transform="translate(520 0)"><circle class="s" cx="14" cy="122" r="13"/><path class="s" d="M14 135 V150"/></g>
-<g transform="translate(20 0)"><circle class="s" cx="14" cy="126" r="10"/><path class="s" d="M14 136 V150"/></g></svg>'''
+<path class="s house" d="M80 150 V112 L108 92 L136 112 V150 M90 104 L108 94 L126 104 M100 150 V130 H114 V150"/>
+<path class="s mill" d="M235 150 L238 74 L241 150"/>
+<g class="blades"><path class="s mill" d="M238 74 L238 40 M238 74 L267 91 M238 74 L209 91"/><circle class="s mill" cx="238" cy="74" r="3.5"/></g>
+<path class="s tower" d="M420 150 V78 H466 V150 M430 92 H456 M430 106 H456 M430 120 H456 M430 134 H456"/>
+<path class="s tree" d="M534 135 V150"/><circle class="s tree" cx="534" cy="122" r="13"/>
+<path class="s tree" d="M34 136 V150"/><circle class="s tree" cx="34" cy="126" r="10"/></svg>'''
     body = f'''
 <section class="wrap" aria-label="Introduction"><div class="hero">
 <div><p class="label eyebrow">{E(H["eyebrow"])}</p><p class="motto">{E(H["motto"])}</p><p class="lede">{E(H["lede"])}</p>
@@ -236,14 +260,16 @@ def home():
 <article class="programme teal"><header><h3>The Adaptation Lab</h3><span class="chip">Applied research</span></header>
 <p>The Adaptation Lab is the applied research arm of SICDP. It takes a single live case at a time and moves it through a structured cycle: intake, active case work, after-action review, and a published dispatch. A dual-wing design also supports an innovation and prototyping track. Each case must name a clear beneficiary, and the Lab documents what it learns so that practical adaptation lessons are shared openly with practitioners and policymakers.</p>
 <ol class="steps">{steps}</ol></article>
-<article class="programme saffron"><div class="papers">{art("media/art/papers.svg", "", p)}<div><header><h3>The Statecraft Papers</h3><span class="chip">Forthcoming</span></header>
+<article class="programme purple"><div class="papers">{art("media/art/papers.svg", "", p)}<div><header><h3>The Statecraft Papers</h3><span class="chip">Forthcoming</span></header>
 <p>Our working paper series. Papers will be published openly here, on SSRN and on Zenodo.</p></div></div></article>
 </div></div></section>
 
 <section class="band on-blue" id="field"><div class="wrap">
-<div class="head"><h2>Field Diaries</h2><p>{E(F["dates"])}. Eleven districts from Bagerhat to Mymensingh.</p></div>
-<div class="photos">{grid}</div>
-<p class="cta"><a class="btn" style="color:#fff;border-color:#fff" href="field-diaries.html">See the route and all photos</a></p>
+<div class="head" style="margin-bottom:22px"><h2>Field Diaries</h2></div>
+<div class="trip-meta"><span class="datechip"><span class="cal">{ico("cal")}</span>{E(F["dates"])}</span>
+<a class="distline" href="field-diaries.html"><span class="pin">{ico("map")}</span>{E(F["districts_line"])}</a></div>
+<div class="photos three">{grid}</div>
+<div class="centre-cta"><a class="btn big fill-sun" href="field-diaries.html">See the route and all photos</a><a class="btn big light" href="field-diaries.html#video">{ico("play")} Watch the field video</a></div>
 </div></section>
 
 <section class="band" id="articles"><div class="wrap">
@@ -252,12 +278,11 @@ def home():
 </div></section>
 
 <section class="band on-sun" id="coming"><div class="wrap coming">
-<div><div class="head" style="margin-bottom:18px"><h2>Coming up</h2></div><ul>{coming}</ul>
-<p class="cta"><a class="btn" style="color:var(--on-sun);border-color:var(--on-sun)" href="events.html">Events</a></p></div>
+<div><div class="head" style="margin-bottom:18px"><h2>Coming up</h2></div>{feature}<ul>{coming}</ul></div>
 {skyline}
 </div></section>
 '''
-    page('index.html', 'Statecraft Institute', 'Statecraft Institute for Climate and Development Policy (SICDP): an independent, youth-led think tank in Bangladesh working on climate governance and state capacity in South Asia.', '', body, p)
+    page('index.html', 'Statecraft Institute', 'Statecraft Institute for Climate and Development Policy (SICDP): an independent, youth-led think tank in Bangladesh working on climate governance and state capacity in South Asia.', '', body, p, pre_footer='var(--band-sun)')
 
 # ---------------------------------------------------------------- field diaries
 ROUTE = ['Dhaka', 'Bagerhat', 'Khulna', 'Jashore', 'Benapole', 'Kotchandpur', 'Islamic University', 'Shilaidaha', 'Rooppur',
@@ -286,32 +311,59 @@ def field():
     mapsvg = (f'<svg class="map" viewBox="{vb}" role="img" aria-label="Map of Bangladesh with the October 2026 route from Dhaka through Bagerhat, Khulna, Jashore, Kotchandpur, Kushtia, Rooppur, Bogura and Jamalpur to Mymensingh">'
               f'<defs><mask id="routemask" maskUnits="userSpaceOnUse"><path class="reveal" pathLength="1" d="{route}"/></mask></defs>'
               f'<path class="land" d="{geo["d"]}"/><path class="route" mask="url(#routemask)" d="{route}"/>{dots}{labels}</svg>')
-    days = ''.join(f'<li><span class="label">{E(d)}</span><span><strong>{E(w)}</strong><br>{E(t)}</span></li>' for d, w, t in DAYS)
+    def cal(d):
+        parts = d.replace(' to ', '-').split(' ')
+        day = parts[0].replace('-', '–'); return f'<span class="cal"><b>{E(parts[-1].upper())}</b><span class="{"long" if len(day) > 2 else ""}">{E(day)}</span></span>'
+    days = ''.join(f'<li>{cal(x["date"])}<div><div class="chips">' + ''.join(f'<span class="chip-place">{E(c.strip())}</span>' for c in x["places"].split(','))
+                   + f'</div><p>{E(x["note"])}</p></div></li>' for x in F['days'])
+    v = F.get('video') or {}
+    if v.get('youtube_id'):
+        video = (f'<div class="video" data-yt="{E(v["youtube_id"])}" data-title="{E(v.get("title", ""))}"><img src="https://i.ytimg.com/vi/{E(v["youtube_id"])}/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover">'
+                 f'<button type="button" aria-label="Play video"><span class="play">{ICON["play"].replace("<path", "<svg viewBox=\"0 0 24 24\"><path")}</svg></span>{E(v.get("title", ""))}</button></div>')
+    else:
+        video = '<div class="video"><div class="empty"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>The field video will appear here</div></div>'
+
     groups = ''
     for place in dict.fromkeys(i['place'] for i in F['photos']):
         figs = ''.join(photo_fig(i, p, viewer=True) for i in F['photos'] if i['place'] == place)
         groups += f'<section class="stop-group"><h2>{E(place)}</h2><div class="photos">{figs}</div></section>'
     body = f'''
-<section class="wrap"><p class="label eyebrow">{E(F["dates"])}</p>
+<section class="wrap" id="map"><p class="datechip" style="background:var(--t-coral);border-color:var(--coral);color:var(--ink-deep)"><span class="cal">{ico("cal")}</span>{E(F["dates"])}</p>
 <div class="diary-top" style="margin-top:18px"><div>{mapsvg}</div>
-<div><p class="lede" style="margin-top:0;max-width:44ch">{E(F["intro"])}</p><ul class="days">{days}</ul></div></div></section>
+<div><p class="lede" style="margin-top:0;max-width:44ch">{E(F["intro"])}</p><ul class="timeline">{days}</ul></div></div></section>
+<section class="wrap" id="video" style="margin-top:48px"><h2 style="font-size:1.6rem;color:var(--ink-deep);margin-bottom:16px">{E(v.get("title", "Field video"))}</h2>{video}</section>
 <section class="band" style="padding-top:48px"><div class="wrap">{groups}</div></section>
-<dialog class="viewer" aria-label="Photo viewer"><div class="pane"><img src="" alt=""><div class="cap"></div>
-<div class="nav"><button class="prev" type="button">Previous</button><button class="close" type="button">Close</button><button class="next" type="button">Next</button></div></div></dialog>
+<dialog class="viewer" aria-label="Photo viewer"><div class="shot"><img src="" alt="">
+<button class="arrow prev" type="button" aria-label="Previous photo">{ico("left")}</button><button class="arrow next" type="button" aria-label="Next photo">{ico("right")}</button>
+<div class="over"><strong></strong><div class="meta"><span>{ico("pin")}<em class="v-place"></em></span><span>{ico("cal")}<em class="v-date"></em></span><span>{ico("clock")}<em class="v-time"></em></span></div>
+<button class="close" type="button">{ico("x")} Close</button></div></div></dialog>
 '''
     page('field-diaries.html', 'Field Diaries · Statecraft Institute', "Photos and route from SICDP's October 2026 field trip across eleven districts of Bangladesh.", 'Field Diaries', body, p, 'Field Diaries')
 
 # ---------------------------------------------------------------- articles
 def article_pages():
-    p = '../'
-    for a in articles():
-        body = f'''<article class="op wrap"><p class="label"><a href="{p}index.html#articles">Articles</a></p>
-<h1 style="margin-top:12px;font-size:clamp(2rem,4.6vw,3rem);color:var(--ink-deep)">{E(a["title"])}</h1>
-<p class="by label">{E(a["author"])} · {E(a["when"])}</p>
+    p = '../'; allA = articles()
+    for a in allA:
+        when = f'{a["date"]}' if a.get('date') else a['when'].replace('Written ', '')
+        t = f'<span>{ico("clock")}{E(str(a["time"]))}</span>' if a.get('time') else ''
+        others = [o for o in allA if o['slug'] != a['slug']]
+        same = [o for o in others if o.get('category') == a.get('category')]
+        sugg = ''.join(f'<li><a href="{o["slug"]}.html">{E(o["title"])}<span>{E(o["author"])}</span></a></li>' for o in (same + [o for o in others if o not in same])[:4])
+        cats = sorted(set(o.get('category', '') for o in allA if o.get('category')))
+        catl = ''.join(f'<li><a href="{p}index.html#articles">{E(c)}</a></li>' for c in cats)
+        face = (f'<img src="{p}assets/photos/{photos(a["author_photo"], [400], square=True)}-400.webp" alt="" style="width:84px;height:84px;object-fit:cover">'
+                if a.get('author_photo') else art('media/art/seat.svg', '', p))
+        body = f'''<div class="wrap op-layout"><article class="op">
+<p class="label"><a href="{p}index.html#articles">Articles</a></p>
+<h1>{E(a["title"])}</h1>
+<div class="metaline"><span>{E(a["author"])}</span><span>{ico("cal")}{E(when)}</span>{t}<a class="catchip" href="{p}index.html#articles">{E(a.get("category", ""))}</a></div>
 <div class="thumb">{art(a["thumbnail"], "", p)}</div>
 <div class="body">{md(a["body"])}</div>
-<p class="disclaimer">Views are the author's own and do not necessarily reflect those of SICDP. Sources will be added.</p></article>'''
-        page(f'articles/{a["slug"]}.html', a['title'] + ' · Statecraft Institute', f'{a["title"]}, an article by {a["author"]}.', 'Articles', body, p)
+<p class="disclaimer">Views are the author's own and do not necessarily reflect those of SICDP. Sources will be added.</p>
+<div class="author-box"><div class="face">{face}</div><div><p class="label muted">About the author</p><h2>{E(a["author"])}</h2><p>{E(a.get("author_bio", ""))}</p></div></div>
+</article>
+<aside class="op-side"><section><h2>You may also like</h2><ul>{sugg}</ul></section><section><h2>Categories</h2><ul>{catl}</ul></section></aside></div>'''
+        page(f'articles/{a["slug"]}.html', a['title'] + ' · Statecraft Institute', f'{a["title"]}, an article by {a["author"]}.', 'Articles', body, p, mast=False)
 
 # ---------------------------------------------------------------- events
 def events_page():
@@ -323,7 +375,7 @@ def events_page():
         else:
             ph = '<div class="photo-slot">Photo from the event will go here</div>'
         note = f'<p class="placeholder" style="margin-top:14px">{E(ev["body"])}</p>' if ev['body'].startswith('PREVIEW NOTE') else md(ev['body'])
-        items += f'''<article class="event"><div><p class="label when">{nice_date(ev["date"])} · {E(ev["place"])}</p>
+        items += f'''<article class="event" id="{ev['slug']}"><div><p class="label when">{nice_date(ev["date"])} · {E(ev["place"])}</p>
 <h2 style="margin-top:10px;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--ink-deep)">{E(ev["title"])}</h2>
 <p style="margin-top:12px">{E(ev["summary"])}</p><p class="muted" style="margin-top:10px">Convened by {E(ev["convened_by"])}</p>{note}</div>{ph}</article>'''
     body = f'<section class="band" style="padding-top:28px"><div class="wrap" style="display:grid;gap:22px">{items}</div></section>'
@@ -335,7 +387,7 @@ def about_pages():
     who = f'''<section class="band" style="padding-top:28px"><div class="wrap prose">
 <p class="intro">SICDP is an independent, youth-led think tank based in Dhaka, Bangladesh. We work at the intersection of climate governance and state capacity in South Asia.</p>
 <p>We study why climate and digital governance fall short in practice, and we ground our answers in field evidence and institutional analysis.</p>
-<h2 style="margin-top:36px">Our motto</h2><p><em>Instituta Firma, Res Publica Firma.</em></p>
+<h2 style="margin-top:36px">Our motto</h2><p class="motto-block">Instituta Firma, Res Publica Firma</p>
 <h2 style="margin-top:36px">Our story</h2><p class="placeholder">Placeholder: a short story of how SICDP started on 8 June 2026 will go here.</p>
 <h2 style="margin-top:36px">How we work</h2><p class="placeholder">Placeholder: how we choose research questions, work in the field and publish openly.</p>
 </div></section>'''
@@ -374,10 +426,9 @@ def about_pages():
             img = f'<img src="{p}assets/photos/{ph}-400.webp" alt="{E(m["name"])}" style="width:120px;height:120px;border-radius:50%;margin:0 auto 14px;object-fit:cover">' if ph else art('media/art/seat.svg', '', p)
             cards += f'<div class="seat">{img}<h3>{E(m["name"])}</h3><p>{E(m.get("role", ""))}</p><p class="label" style="margin-top:8px">{E(m.get("division", ""))}</p></div>'
     else:
-        cards = ''.join(f'<div class="seat">{art("media/art/seat.svg", "", p)}<h3>Profile in preparation</h3><p>Team member</p></div>' for _ in range(4))
+        cards = ''.join(f'<div class="seat">{art("media/art/seat.svg", "", p)}<h3>Profile in preparation</h3><p>Team member</p></div>' for _ in range(8))
     team = f'''<section class="band" style="padding-top:28px"><div class="wrap">
-<h2 style="font-size:1.6rem">How SICDP is organised</h2><p class="placeholder" style="margin:14px 0 36px">Placeholder: the organisational structure chart will go here.</p>
-<div class="people">{cards}</div></div></section>'''
+<div class="people same">{cards}</div></div></section>'''
     page('about/team.html', 'Team · Statecraft Institute', 'The people of SICDP.', 'Team', team, p, 'Team')
 
 if __name__ == '__main__':

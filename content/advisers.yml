@@ -1,7 +1,33 @@
 # Board of Advisers and International Advisers. A name goes in only after written consent.
 board:
-  - {seat: Climate & Disaster Governance, name: "", role: "", photo: "", about: ""}
-  - {seat: Rural Development & Char Lands, name: "", role: "", photo: "", about: ""}
-  - {seat: Public Administration & Digital Governance, name: "", role: "", photo: "", about: ""}
+- seat: Climate & Disaster Governance
+  name: ''
+  role: ''
+  photo: ''
+  about: ''
+- seat: Rural Development & Char Lands
+  name: ''
+  role: ''
+  photo: ''
+  about: ''
+- seat: Public Administration & Digital Governance
+  name: ''
+  role: ''
+  photo: ''
+  about: ''
 international:
-  - {seat: International Adviser, name: "", role: "", photo: "", about: ""}
+- seat: International Adviser
+  name: ''
+  role: ''
+  photo: ''
+  about: ''
+- seat: International Adviser
+  name: ''
+  role: ''
+  photo: ''
+  about: ''
+- seat: International Adviser
+  name: ''
+  role: ''
+  photo: ''
+  about: ''

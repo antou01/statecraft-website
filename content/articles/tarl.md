@@ -4,6 +4,11 @@ author: Shuaib Ahmed Araf
 written: 2026-09
 thumbnail: media/art/thumb-tarl.svg
 note: to be added later (state minister school visit)
+category: Education & Public Policy
+date: ''
+time: ''
+author_bio: Member of SICDP; Department of Public Administration, University of Dhaka.
+author_photo: ''
 ---
 
 The Bangladeshi Education System, according to most popular media, is faulty, ineffective, somewhat corrupt, and obviously needs change. And unfortunately this is true, and we cannot refine it instantly. What we can do is to specifically target each problem and bring changes there that have visible and measurable results. So, instead of reforming the whole system and holistically targeting all the problems at once through massive reforms, what we actually need to do is to find the most basic problem and solve it first.

@@ -4,6 +4,11 @@ author: Md. Imam Hossain Shihab
 written: 2026-07
 thumbnail: media/art/thumb-automate.svg
 note: held by the author, to be added later
+category: Technology & State Capacity
+date: ''
+time: ''
+author_bio: Founder and Executive Director of SICDP.
+author_photo: ''
 ---
 
 You are a biker rushing through the roads of Dhaka, the slowest city in the world according to a US NBER report, and you see the traffic light turn red the moment you are about to cross the road. What would you do? An average driver in Dhaka would not even care to look at the traffic lights. But that was before the seventh of May, because from that day on the Dhaka Metropolitan Police (DMP) decided to announce, "Not anymore!"
