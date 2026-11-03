@@ -66,6 +66,21 @@ Read this whole file before doing anything. Then read the files listed under "Re
   - Phone 01812267679 is Shihab's; fine on the site. Op-eds are approved by Shihab.
   - Field video subjects gave consent. No Bengali on the site. No soft target date. Test device: Hasanor's low-cost Android.
 - Photos (decided 3 Nov 2026): hero set = Hero_1 (buffaloes on Jamuna char), Hero_4 (garbage burning beside homes and farmland, Kotchandpur), the paddy field with power lines, the boats on the char, the betel-nut tree road with the egret. Everything else goes to Field Diaries, including the tea stall group (no face blurring), Rooppur seen from outside (neutral caption; SICDP will work on it later) and the elephant on the road. Strip GPS/metadata from every published photo. Home shows 6 Field Diaries photos; a separate Field Diaries page shows all, with a stitched route on a Bangladesh map from Bagerhat to Mymensingh. Hasanor will send notes with places and dates.
+- Team review of preview v1 (3 Nov 2026 evening, Hasanor, Shihab, Tahmid, Jony). These override earlier motion/colour notes where they differ; items marked (?) await confirmation:
+  - Logo: on first open the full logo lockup sits large in the page body (colour version on dark, purple on white); on scroll it shrinks into the sticky header. The current header wordmark font feels AI-ish: change it.
+  - Fonts: change the type overall (feels "AI slop"); free Google Fonts only; inspiration from nesta.org.uk (not copied).
+  - Colour: add soft colour bands per section (emblem palette, restrained, "premium" not loud) and use colour wherever it fits; thumbnails to be redrawn in colour. Purple-only rule is relaxed.
+  - Hero eyebrow: drop "Independent · Youth-led · Dhaka"; say Bangladesh only (not Dhaka-centred). (?) whether "Independent" and "Youth-led" stay.
+  - Hero photos rotate every 2 seconds (replaces "one random per visit"). On phone the photo goes BELOW the text.
+  - Theme: keep following the device (system). (?) they also want to try the dark version on phone.
+  - Thread trail behind the mouse: REMOVE (looks like a developer portfolio gimmick). Keep the weave glow near the cursor, and add the same glow on touch on phones (plain areas only, never over text); make the weave more visible on phones.
+  - Footer: the dark footer colour must fill up to the wave so the wave is the footer's top edge (not a wave drawn on a box).
+  - Field Diaries: photos open in a large stitched-frame view on click, with swipe / next-previous within the row; links to Field Diaries land at the top with the map first. Tea stall photo is Shailkupa, Jhenaidah (not Kotchandpur); (?) the "Near Islamic University" photos also Shailkupa, Jhenaidah. Night photo caption near BAU needs a relevant caption or a better BAU photo.
+  - Write-ups: (?) rename to "Articles".
+  - Coming up: section keeps the name "Coming up"; items say "Coming up", not "Forthcoming" ("Forthcoming" is for publications). Add the paper Shihab sent (not received yet). Section looks empty: needs more.
+  - Team and Advisory Board come OFF the home page. New menu "About SICDP" with dropdown modelled on cgs-bd.com: Who we are, Board of Advisers, International Advisers, Allies (partners), Team (last). No Board of Directors (directors sit in Team). Pages may use clearly marked placeholder text. Add a top-level "Events" section. Footer social links as icons.
+  - Drought illustration to be redrawn more realistic (e.g. cattle on cracked land). More human photos (team at work) to come.
+  - Do not share the preview outside the team yet.
 - Write-ups (content/write-ups/, approved 3 Nov 2026): "Is Bangladesh Ready to Automate?" (Shihab, written July 2026; the op-ed may use the term "Premature Automation" with its attribution; sources held by author, added later), "TaRL: Small Solution to a Big Problem" and "The Nightmare of Never-Skilling" (Shuaib Ahmed Araf, SICDP team member, consent given, written September 2026). Show month only, labelled as written, not a fake publication day. Thumbnails: Hasanor will send images.
 - Answers to the open questions (3 Nov 2026):
   - Plan and purple brand: APPROVED as written (Shihab agreed). Building can start once the starter items arrive.
