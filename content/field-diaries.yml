@@ -1,0 +1,19 @@
+# Field Diaries photos, in route order. "home: true" shows the photo on the home page (keep six).
+intro: Eight days on trains, buses, CNGs and a boat across the Jamuna. About 1,100 km through eleven districts, recording short interviews on climate and development.
+dates: 21 to 29 October 2026
+photos:
+  - {photo: media/photos/shailkupa-tea-stall.jpg, caption: A roadside tea stall, place: "Near Islamic University, Shailkupa, Jhenaidah", date: October 2026, home: true}
+  - {photo: media/photos/iu-village-interview.jpg, caption: Recording an interview in a village, place: "Near Islamic University, Shailkupa, Jhenaidah", date: 24 October 2026, home: true}
+  - {photo: media/photos/iu-tea-stall.jpg, caption: Tea and talk at a village stall, place: "Near Islamic University, Shailkupa, Jhenaidah", date: 24 October 2026}
+  - {photo: media/photos/iu-buffalo-cart.jpg, caption: A buffalo cart on a village road, place: "Near Islamic University, Shailkupa, Jhenaidah", date: 24 October 2026}
+  - {photo: media/photos/shilaidaha-fields.jpg, caption: The team in the paddy fields, place: "Shilaidaha, Kushtia", date: 24 October 2026, home: true}
+  - {photo: media/photos/rooppur.jpg, caption: "Rooppur at dusk, seen from the road", place: "Rooppur, Ishwardi, Pabna", date: 24 October 2026, home: true}
+  - {photo: media/photos/rda-working-session.jpg, caption: An evening working session, place: "Rural Development Academy, Bogura", date: 25 October 2026, home: true}
+  - {photo: media/photos/sariakandi-ghat-boat.jpg, caption: A boat at the ghat, place: "Jamuna river, Sariakandi, Bogura", date: 26 October 2026}
+  - {photo: media/photos/jamuna-crossing.jpg, caption: Crossing the Jamuna by boat, place: "Jamuna river, Sariakandi, Bogura", date: 26 October 2026, home: true}
+  - {photo: media/photos/jamuna-boat-ride.jpg, caption: On the Jamuna crossing, place: "Jamuna river, Sariakandi, Bogura", date: 26 October 2026}
+  - {photo: media/photos/jamuna-sandbar.jpg, caption: People on a sandbar mid-river, place: "Jamuna river, Sariakandi, Bogura", date: 26 October 2026}
+  - {photo: media/photos/jamuna-char.jpg, caption: A low char on the Jamuna, place: "Jamuna river, Sariakandi, Bogura", date: 26 October 2026}
+  - {photo: media/photos/madarganj-elephant.jpg, caption: An elephant on the road, place: "Madarganj, Jamalpur", date: 26 October 2026}
+  - {photo: media/photos/madarganj-van.jpg, caption: A battery van on the Madarganj road, place: "Madarganj, Jamalpur", date: 26 October 2026}
+  - {photo: media/photos/mymensingh-last-stop.jpg, caption: The last stop of the route, place: "Bangladesh Agricultural University, Mymensingh", date: 27 October 2026}
