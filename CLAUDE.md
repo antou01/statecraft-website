@@ -41,6 +41,16 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - Domain and email: no funds, so use the .xyz domain (sicdp.xyz) and the Gmail address for now.
 - Visual system (Hasanor's idea, 3 Nov 2026): nakshi kantha running stitch is THE unifying motif across the site: page background as a faint watermark weave (barely visible), section borders and dividers, text-box/card frames, profile frames, larger icons. Purple on white. Proposed guardrails (to confirm): stitch for frames, dividers and large illustrations; solid lines for body text and small UI icons (24px) so they stay legible; watermark very low opacity and never behind long text in a way that hurts contrast; built with CSS and one tiny SVG pattern so the site stays light.
 - Motion wishes (Hasanor, 3 Nov 2026; details still open): hover on empty areas should feel like touching a kantha; loading shown as stitches being sewn; page-to-page transition with a stitch (and river wave) feel; river waves can combine with stitch. Must stay light and calm, not heavy on the eye. Proposed budget: no animation libraries, all interaction JS under ~5 KB, honour prefers-reduced-motion, never block content behind a loader, phone (no hover) needs its own answer.
+- Motion decisions (Hasanor, 3 Nov 2026):
+  - Desktop hover on empty areas and on images: stitches near the cursor become clearer + a light ripple + a thread trail behind the cursor that stays while the mouse is there, then fades. Only if it stays light.
+  - Phone: section dividers stitch themselves on scroll; tap-to-reveal stitches in special places (header, footer).
+  - No blocking loader. Hero lines stitch in within ~1 s on open; image/video placeholders show stitching while loading; stitch-in plays on every page.
+  - Page transitions under 0.5 s, as fast as possible: stitch line sewn left to right for the programme "wings"; river-wave curtain and a one-time card shimmer for Team profiles, About, Contact; other places minimal.
+  - Waves drawn as a running stitch: hero, footer, and as dividers between landing-page sections.
+  - Illustrations gently animated (haor water rippling, tree drying under the sun, etc.): noticeable but never annoying.
+  - Colour: purple only (no secondary colours for now).
+  - Reduced-motion users: no movement, but keep a little feel (e.g. soft fades).
+  - Dark mode: under discussion, not decided.
 
 ## The organisation (background from internal documents)
 - Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG).
