@@ -1,7 +1,9 @@
 ---
 title: "TaRL: Small Solution to a Big Problem"
 author: "Shuaib Ahmed Araf"
-status: "received 3 Nov 2026, spelling and grammar fixed by Claude, awaiting Shihab's approval"
+status: "approved for the site 3 Nov 2026; spelling and grammar fixed, cost line changed to very low extra cost"
+written: "2026-09"
+sources: "to be added later (state minister school visit)"
 ---
 
 The Bangladeshi Education System, according to most popular media, is faulty, ineffective, somewhat corrupt, and obviously needs change. And unfortunately this is true, and we cannot refine it instantly. What we can do is to specifically target each problem and bring changes there that have visible and measurable results. So, instead of reforming the whole system and holistically targeting all the problems at once through massive reforms, what we actually need to do is to find the most basic problem and solve it first.
@@ -17,7 +19,7 @@ The system looks something like this:
 * These students are reassessed periodically and rearranged based on that.
 * This whole process runs alongside the regular classes that follow the regular grade-based curriculum.
 
-The reason to choose this specific method is because it has been tested in India, Kenya, Zambia, Botswana, Nigeria, and Ghana, showing measurable positive impact on childhood learning and literacy abilities. It is essentially a catch-up mechanism rather than a replacement reform. So it's easy to execute, yet the effectiveness is high. This needs no new textbooks, no new hires, and no extra budget. The materials can be designed by existing teachers as well as arranging the classes, just with one restructured period. Diagnosis is also very easy and straightforward. This makes this reform unusually feasible for execution, and instead of NGOs, it should be the government carrying this out.
+The reason to choose this specific method is because it has been tested in India, Kenya, Zambia, Botswana, Nigeria, and Ghana, showing measurable positive impact on childhood learning and literacy abilities. It is essentially a catch-up mechanism rather than a replacement reform. So it's easy to execute, yet the effectiveness is high. This needs no new textbooks, no new hires, and only a very low extra cost. The materials can be designed by existing teachers as well as arranging the classes, just with one restructured period. Diagnosis is also very easy and straightforward. This makes this reform unusually feasible for execution, and instead of NGOs, it should be the government carrying this out.
 
 The government can mandate that every school has this program, train the teachers to get used to this, and establish a centralized team to periodically check whether this system is running effectively or not.
 

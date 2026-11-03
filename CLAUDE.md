@@ -65,6 +65,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
   - All accounts (domain, Cloudflare, GitHub, YouTube) on the organisation Gmail. Domain sicdp.xyz not bought yet; buying now.
   - Phone 01812267679 is Shihab's; fine on the site. Op-eds are approved by Shihab.
   - Field video subjects gave consent. No Bengali on the site. No soft target date. Test device: Hasanor's low-cost Android.
+- Write-ups (content/write-ups/, approved 3 Nov 2026): "Is Bangladesh Ready to Automate?" (Shihab, written July 2026; the op-ed may use the term "Premature Automation" with its attribution; sources held by author, added later), "TaRL: Small Solution to a Big Problem" and "The Nightmare of Never-Skilling" (Shuaib Ahmed Araf, SICDP team member, consent given, written September 2026). Show month only, labelled as written, not a fake publication day. Thumbnails: Hasanor will send images.
 - Answers to the open questions (3 Nov 2026):
   - Plan and purple brand: APPROVED as written (Shihab agreed). Building can start once the starter items arrive.
   - Launch: no fixed date.

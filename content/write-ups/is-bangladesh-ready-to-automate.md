@@ -1,7 +1,9 @@
 ---
 title: "Is Bangladesh Ready to Automate?"
 author: "Md. Imam Hossain Shihab"
-status: "received 3 Nov 2026, grammar fixed by Claude, awaiting decision (uses the term 'Premature Automation') and source links"
+status: "approved for the site 3 Nov 2026; grammar fixed, stray last line removed"
+written: "2026-07"
+sources: "held by the author, to be added later"
 ---
 
 You are a biker rushing through the roads of Dhaka, the slowest city in the world according to a US NBER report, and you see the traffic light turn red the moment you are about to cross the road. What would you do? An average driver in Dhaka would not even care to look at the traffic lights. But that was before the seventh of May, because from that day on the Dhaka Metropolitan Police (DMP) decided to announce, "Not anymore!"
@@ -42,4 +44,4 @@ The solution is not Anti-AI, but fulfilling a precondition before automating. Th
 
 At 25 intersections in Dhaka, the AI-enabled CCTV cameras are watching, soon to be expanded. The auto-rickshaws are still out of the frame. The law that will govern the service won't begin taking shape until 2028. Hanan Rahman Jibon paid his fine, but the same database that identified him leaked NID card information the year before.
 
-It may look like the future has arrived in Dhaka on the seventh of May. But the institutional infrastructure that the future requires hasn't arrived yet. Printouts are open.
+It may look like the future has arrived in Dhaka on the seventh of May. But the institutional infrastructure that the future requires hasn't arrived yet.
