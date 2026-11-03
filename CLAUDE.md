@@ -90,7 +90,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - Events: RDA Synergy Week 2027 at the Rural Development Academy, Bogura, with its Char Development Research Centre (TEDxBogura, Char Research Bootcamp, Delta Futures Symposium; about 100 participants from 8 universities; proposal to RDA's Director General drafted, NOT yet approved). IIT Kharagpur cross-border roundtable, target Dec 2026 (faculty panel NOT confirmed). A Dhaka roundtable is planned.
 - Publication imprint: The Statecraft Papers. Standard: "useful to someone making a decision".
 - Structure: four divisions (Policy & Research, External Relations, Strategic Engagement, Creative Studio); Advisory Fellows and an advisory board of teachers planned.
-- Field content: in Oct 2026 Hasanor and team did an 8-day trip Khulna to Moulvibazar (13 districts) recording short interviews on climate and development ("চায়ের কাপে বাংলাদেশ" / Voices from the Delta, Field Diary, Field Notes), including RDA Bogura experts.
+- Field content: 21 to 29 Oct 2026 Hasanor and team travelled Dhaka, Khulna, Bagerhat, Jashore, Jhenaidah, Kushtia, Pabna, Natore, Bogura (RDA), Jamalpur, Mymensingh (11 districts, about 1,100 km) recording short interviews ("চায়ের কাপে বাংলাদেশ"). The older Khulna to Moulvibazar plan was not the actual route. Public route and photo cross-check: `docs/field/route-oct-2026.md`.
 - Hasanor's vision: a think tank that feels prestigious yet "ours" to ordinary Bangladeshis across religion and politics, rooted in the land, recognisable by colour and logo alone, relevant for 50 to 100 years.
 
 ## Repository layout
