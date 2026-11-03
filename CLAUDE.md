@@ -25,6 +25,18 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - Contact: thestatecraftinstitute@gmail.com
 - Implication for the site: there are no published outputs yet. Everything above under "Plans" must be labelled as proposed / planned / forthcoming.
 
+## Website decisions by Hasanor (3 Nov 2026): these override the background sections below
+- Tagline: the Latin motto "Instituta Firma, Res Publica Firma" (as on the document cover) is the main tagline. Do NOT use "Southern Perspectives. Global Policy." or "Good governance is climate action".
+- Do NOT use publicly: the "borrowed capacity / built capacity" thesis, the "Borrowed Capacity" and "Premature Automation" papers (personal work of the authors, unpublished, not SICDP work), the IIT Kharagpur roundtable, the Bengal Delta Conference, anything from `SICG.docx` (outdated draft). No funding page or funder names for now (no funding yet). No 3-month goals, no achievements timeline.
+- Tone and scope: light site. Say what we work on, and note upcoming progress briefly. No heavy detail. Grows as work happens.
+- RDA: may be mentioned only as forthcoming work with RDA (proposal is in process); no dates or programme details yet.
+- Content we can publish: unpublished, original op-eds by SICDP people, published on the SICDP website under the SICDP banner; field photos and videos from the Oct 2026 trip.
+- Team: everyone is willing to give photos. Build a profile for each member (photo + short About). Hasanor will send the team list. No advisers yet: do not show an advisory board.
+- "Youth-led" can be up front.
+- Language: English only.
+- Colours: Shihab's navy dossier draft is not binding; design fresh in the brand.
+- Domain and email: no funds, so use the .xyz domain (sicdp.xyz) and the Gmail address for now.
+
 ## The organisation (background from internal documents)
 - Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG).
 - Youth-led policy think tank, Dhaka, founded 2026 by Md. Imam Hossain Shihab (Founder and Executive Director). Hasanor leads design in the Creative Studio and wants a leadership role.
@@ -72,12 +84,12 @@ Read this whole file before doing anything. Then read the files listed under "Re
 
 ## Open questions to ask Hasanor first
 1. Who will update the site after launch?
-2. Domain: keep .xyz or get .org?
-3. One landing page first, or the full 8 to 10 page site?
-4. English only, or Bengali too?
-5. Build on Shihab's draft or start fresh in the new purple brand? Has Shihab agreed to the new brand?
-6. Deadline (ideally before the RDA proposal goes out)?
-7. Names, roles, photos and consent for leadership, team and advisory board?
+2. ~~Domain~~ Answered: .xyz + Gmail for now (3 Nov 2026).
+3. One landing page first, or the full 8 to 10 page site? (He wants a light site.)
+4. ~~Language~~ Answered: English only.
+5. ~~Shihab's draft~~ Answered: start fresh. Still confirm Shihab has agreed to the purple brand.
+6. Deadline?
+7. Team list, roles, photos and short bios (he will send). Advisers: none yet.
 8. ~~Final organisation name~~ Answered: SICDP (2 Nov 2026).
 
 ## How to start a session
