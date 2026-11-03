@@ -25,6 +25,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
   - Publish working papers openly through the website, SSRN and Zenodo.
   - Publish policy briefs and op-eds ahead of a cross-border academic roundtable with Indian institutions, targeted for December 2026.
   - Build long-term partnerships with South Asian research institutions.
+- Real invitation (received 2 Nov 2026): Bangladesh Climate Change Trust (BCCT, Ministry of Environment, Forest and Climate Change) invited SICDP (listed first in the distribution) to send a representative to a youth consultation ahead of COP31 on meaningful youth participation in Bangladesh's climate priorities. 5 Nov 2026, 11:00, BCCT conference room, Puraton Bon Bhaban, 101 Mohakhali, Dhaka, chaired by the BCCT Managing Director; about 65 attendees. Site wording rule: "invited to / took part in" only after attending; never "partner of BCCT". Do not publish the notice image itself.
 - Contact: thestatecraftinstitute@gmail.com
 - Implication for the site: there are no published outputs yet. Everything above under "Plans" must be labelled as proposed / planned / forthcoming.
 
