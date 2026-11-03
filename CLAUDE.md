@@ -15,7 +15,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - What we try to do: We study why climate and digital governance fall short in practice, and we ground our answers in field evidence and institutional analysis.
 - Programmes:
   - C30 Agenda: first major field research project. Audits where climate-related SDG targets failed to deliver and proposes climate priorities beyond 2030, based on fieldwork in four Bangladeshi sites facing salinity, riverbank erosion, drought and flash flooding.
-  - The Adaptation Lab: applied research arm. Flagship project "Charting Displacement": riverbank erosion and char community displacement along the Jamuna and Padma.
+  - The Adaptation Lab: applied research arm. Describe it in general terms only (the approved copy below). Do NOT name "Charting Displacement" or any specific case on the site (Hasanor, 3 Nov 2026).
   - The Statecraft Papers: planned working paper series. NOT yet launched.
 - Approved programme copy for the site (Hasanor, 3 Nov 2026; use as written, English):
   - C30 Agenda: "The C30 Agenda is SICDP's first major field research project. It audits where climate-related Sustainable Development Goal targets failed to deliver for climate-vulnerable communities and proposes climate priorities for the decade beyond 2030, grounded in direct field evidence from Bangladesh. Research teams work across four sites, each representing a distinct hazard: coastal salinity, riverine erosion, drought, and haor flash floods. Findings are qualitative-led, drawn from interviews and focus groups."
