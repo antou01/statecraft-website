@@ -40,6 +40,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - Colours: Shihab's navy dossier draft is not binding; design fresh in the brand.
 - Domain and email: no funds, so use the .xyz domain (sicdp.xyz) and the Gmail address for now.
 - Visual system (Hasanor's idea, 3 Nov 2026): nakshi kantha running stitch is THE unifying motif across the site: page background as a faint watermark weave (barely visible), section borders and dividers, text-box/card frames, profile frames, larger icons. Purple on white. Proposed guardrails (to confirm): stitch for frames, dividers and large illustrations; solid lines for body text and small UI icons (24px) so they stay legible; watermark very low opacity and never behind long text in a way that hurts contrast; built with CSS and one tiny SVG pattern so the site stays light.
+- Motion wishes (Hasanor, 3 Nov 2026; details still open): hover on empty areas should feel like touching a kantha; loading shown as stitches being sewn; page-to-page transition with a stitch (and river wave) feel; river waves can combine with stitch. Must stay light and calm, not heavy on the eye. Proposed budget: no animation libraries, all interaction JS under ~5 KB, honour prefers-reduced-motion, never block content behind a loader, phone (no hover) needs its own answer.
 
 ## The organisation (background from internal documents)
 - Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG).
