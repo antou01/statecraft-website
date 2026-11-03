@@ -31,7 +31,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - Tone and scope: light site. Say what we work on, and note upcoming progress briefly. No heavy detail. Grows as work happens.
 - RDA: may be mentioned only as forthcoming work with RDA (proposal is in process); no dates or programme details yet.
 - Content we can publish: unpublished, original op-eds by SICDP people, published on the SICDP website under the SICDP banner; field photos and videos from the Oct 2026 trip.
-- Team: everyone is willing to give photos. Build a profile for each member (photo + short About). Hasanor will send the team list. No advisers yet: do not show an advisory board.
+- Team: everyone is willing to give photos. Build a profile for each member (photo + short About). Hasanor will send the team list. No advisers yet. Hasanor wants the Advisory Board section SHOWN with open seats (empty, honestly labelled, no fake names or faces), so prospective advisers can see where their name and photo will go and what they gain. A name goes in only after written consent.
 - "Youth-led" can be up front.
 - Language: English only.
 - Colours: Shihab's navy dossier draft is not binding; design fresh in the brand.
