@@ -51,6 +51,17 @@ Read this whole file before doing anything. Then read the files listed under "Re
   - Colour: purple only (no secondary colours for now).
   - Reduced-motion users: no movement, but keep a little feel (e.g. soft fades).
   - Dark mode: under discussion, not decided.
+- Answers to the open questions (3 Nov 2026):
+  - Plan and purple brand: APPROVED as written (Shihab agreed). Building can start once the starter items arrive.
+  - Launch: no fixed date.
+  - Site maintainer: Shanto (Hasanor Rahman Shanto, i.e. Hasanor himself).
+  - Motto: Latin only, no translation shown.
+  - Advisory Board: four open seats, no names, no Founding Chair for now: Climate & Disaster Governance; Rural Development & Char Lands; Public Administration & Digital Governance; Foreign Adviser.
+  - Prof. Abdullah-Al-Mamun: not approaching for now. Do not reference him on the site.
+  - Team order: by division, following Hasanor's division chart (chart not yet received). Anyone in more than one division needs one primary division.
+  - Founding date: 8 June 2026.
+  - Contact: email + phone 01812267679 (as on the letterhead), no form.
+  - Festival greetings: none for now.
 
 ## The organisation (background from internal documents)
 - Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG).
@@ -98,12 +109,12 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - The site must have a named maintainer and be easy to update.
 
 ## Open questions to ask Hasanor first
-1. Who will update the site after launch?
+1. ~~Who will update the site~~ Answered: Shanto (Hasanor).
 2. ~~Domain~~ Answered: .xyz + Gmail for now (3 Nov 2026).
 3. One landing page first, or the full 8 to 10 page site? (He wants a light site.)
 4. ~~Language~~ Answered: English only.
-5. ~~Shihab's draft~~ Answered: start fresh. Still confirm Shihab has agreed to the purple brand.
-6. Deadline?
+5. ~~Shihab's draft~~ Answered: start fresh; purple brand and plan approved.
+6. ~~Deadline~~ Answered: no fixed date.
 7. Team list, roles, photos and short bios (he will send). Advisers: none yet.
 8. ~~Final organisation name~~ Answered: SICDP (2 Nov 2026).
 
