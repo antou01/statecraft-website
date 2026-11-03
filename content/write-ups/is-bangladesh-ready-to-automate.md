@@ -1,12 +1,12 @@
 ---
 title: "Is Bangladesh Ready to Automate?"
 author: "Md. Imam Hossain Shihab"
-status: "received 3 Nov 2026, original text, awaiting decision (uses the term 'Premature Automation') and source links"
+status: "received 3 Nov 2026, grammar fixed by Claude, awaiting decision (uses the term 'Premature Automation') and source links"
 ---
 
 You are a biker rushing through the roads of Dhaka, the slowest city in the world according to a US NBER report, and you see the traffic light turn red the moment you are about to cross the road. What would you do? An average driver in Dhaka would not even care to look at the traffic lights. But that was before the seventh of May, because from that day on the Dhaka Metropolitan Police (DMP) decided to announce, "Not anymore!"
 
-The traffic division of the DMP placed 25 AI-based cameras, integrated with 'Road Transport Act-2018 Violation Detection Software', at major intersections between Intercontinental and Jahangir Gate. The idea was to replace manual traffic prosecution system with a digital one.
+The traffic division of the DMP placed 25 AI-based cameras, integrated with 'Road Transport Act-2018 Violation Detection Software', at major intersections between Intercontinental and Jahangir Gate. The idea was to replace the manual traffic prosecution system with a digital one.
 
 The manual system had noticeable flaws. It required stopping vehicles, causing traffic congestion and disrupting traffic flow. The paper-based slips and on-spot fines also consumed time, and the handwriting on the paper slips sometimes looked like a medical prescription.
 
@@ -22,9 +22,9 @@ There are reports of traffic violations regardless of the AI traffic police watc
 
 AI will make mistakes, but who is responsible when it does? You? The DMP? The AI? Does the DMP have the technical capacity to regularly update information in its database?
 
-Talking about databases, we can look into the two NID data leak cases that happened last year. The personal data of 120 million people are stored in the NID database and 186 organizations now receive NID verification from the database.
+Talking about databases, we can look into the two NID data leak cases that happened last year. The personal data of 120 million people is stored in the NID database and 186 organizations now receive NID verification from the database.
 
-On 10 February 2025, five institutions were found to breach database information to third parties. On May 7 of the same year, the Election Commission found two organizations actively leaking data and suspended their access to NID verification services.
+On 10 February 2025, five institutions were found to have leaked database information to third parties. On May 7 of the same year, the Election Commission found two organizations actively leaking data and suspended their access to NID verification services.
 
 This is the same quality database, without any improved regulation, protection or management, upon which we are deploying AI-enabled services.
 
