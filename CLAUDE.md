@@ -51,7 +51,12 @@ Read this whole file before doing anything. Then read the files listed under "Re
   - Illustrations gently animated (haor water rippling, tree drying under the sun, etc.): noticeable but never annoying.
   - Colour: purple only (no secondary colours for now).
   - Reduced-motion users: no movement, but keep a little feel (e.g. soft fades).
-  - Dark mode: under discussion, not decided.
+  - Dark mode (decided 3 Nov 2026): follow the device automatically, NO toggle button. Light device = white site; dark device = dark site. Dark background is a soft charcoal / iron black (not pure black), text light purple-white (#F4EDF6), links light purple, watermark even fainter. Emblem: purple version in light mode, full-colour version in dark mode; the emblem's elements must never change. Phone browser bar (Android status/address bar) should match the purple header (theme-color).
+  - Trail: on PC long, following the mouse path, fades 1 s after the mouse leaves; on phone short (finger length). Nothing happens over text. Ripple only on images.
+  - Illustration animation runs slowly while on screen, stops off screen; only one moving illustration on screen at a time. Hero: photos rotate one after another.
+  - Low-end phones: drop images/animations where needed and just show the content.
+  - Structure (to confirm): full home page with sections; menu items scroll to sections; About has its own entry; NO contact page or form, contact (email, phone) and social links sit in the footer; programmes and divisions are the "wings" with their own pages and the stitch transition.
+  - Illustrations: Hasanor generated them in Google Flow from the prompts; he will send a folder.
 - Answers to the open questions (3 Nov 2026):
   - Plan and purple brand: APPROVED as written (Shihab agreed). Building can start once the starter items arrive.
   - Launch: no fixed date.
