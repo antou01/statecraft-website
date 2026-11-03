@@ -56,7 +56,15 @@ Read this whole file before doing anything. Then read the files listed under "Re
   - Illustration animation runs slowly while on screen, stops off screen; only one moving illustration on screen at a time. Hero: photos rotate one after another.
   - Low-end phones: drop images/animations where needed and just show the content.
   - Structure (to confirm): full home page with sections; menu items scroll to sections; About has its own entry; NO contact page or form, contact (email, phone) and social links sit in the footer; programmes and divisions are the "wings" with their own pages and the stitch transition.
-  - Illustrations: Hasanor generated them in Google Flow from the prompts; he will send a folder.
+  - Illustrations: Hasanor generated them in Google Flow from the prompts; he will send them as reference. Claude redraws them as clean, layered line-art SVG so they can be animated.
+- More decisions (3 Nov 2026):
+  - Section names: "From the field" is called "Field Diaries"; "Writing" is called "Write-ups" (op-eds shown as thumbnail cards).
+  - Division pages: description of the division's work, member list, links to member profiles.
+  - Photos: files named for the hero go to the hero (one random photo per visit with its place name, no slideshow); files named field trip, and unnamed ones, go to Field Diaries.
+  - Emblem: tree gaps stay transparent (also in dark mode). Dark-mode header is charcoal (like YouTube).
+  - All accounts (domain, Cloudflare, GitHub, YouTube) on the organisation Gmail. Domain sicdp.xyz not bought yet; buying now.
+  - Phone 01812267679 is Shihab's; fine on the site. Op-eds are approved by Shihab.
+  - Field video subjects gave consent. No Bengali on the site. No soft target date. Test device: Hasanor's low-cost Android.
 - Answers to the open questions (3 Nov 2026):
   - Plan and purple brand: APPROVED as written (Shihab agreed). Building can start once the starter items arrive.
   - Launch: no fixed date.
