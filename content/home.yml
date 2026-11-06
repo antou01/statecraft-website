@@ -1,0 +1,31 @@
+# Home page. Edited through the site editor.
+eyebrow: Independent · Youth-led · Bangladesh
+motto: Instituta Firma, Res Publica Firma
+lede: We work at the intersection of climate governance and state capacity in South Asia.
+hero_seconds: 3
+heroes:
+  - photo: media/photos/hero-jamuna-buffaloes.jpg
+    caption: Buffaloes on a char in the Jamuna
+    place: Sariakandi, Bogura
+    date: 26 October 2026
+  - photo: media/photos/hero-kotchandpur-burning.jpg
+    caption: Waste burning beside homes and farmland
+    place: Kotchandpur, Jhenaidah
+    date: 23 October 2026
+  - photo: media/photos/hero-bau-paddy.jpg
+    caption: Paddy fields and power lines
+    place: Bangladesh Agricultural University, Mymensingh
+    date: October 2026
+  - photo: media/photos/hero-sariakandi-boats.jpg
+    caption: Boats moored at the Jamuna ghat
+    place: Sariakandi, Bogura
+    date: 26 October 2026
+  - photo: media/photos/hero-rda-palms.jpg
+    caption: An egret takes off on a road lined with betel-nut palms
+    place: Rural Development Academy, Bogura
+    date: October 2026
+coming_up:
+  - title: Work with the Rural Development Academy, Bogura
+    label: Coming up
+  - title: The first Statecraft Papers
+    label: Forthcoming

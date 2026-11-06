@@ -1,0 +1,130 @@
+# Site editor (Pages CMS, https://pagescms.org). Log in with the organisation's GitHub account.
+# Every save is a commit; Cloudflare Pages rebuilds the site in about a minute.
+media:
+  input: media
+  output: media
+content:
+  - name: home
+    label: Home page
+    type: file
+    path: content/home.yml
+    fields:
+      - { name: eyebrow, label: Small label above the motto, type: string }
+      - { name: motto, label: Motto, type: string }
+      - { name: lede, label: One-line introduction, type: string }
+      - { name: hero_seconds, label: Seconds between hero photos, type: number }
+      - name: heroes
+        label: Hero photos
+        type: object
+        list: true
+        fields:
+          - { name: photo, label: Photo, type: image }
+          - { name: caption, label: Caption, type: string }
+          - { name: place, label: Place, type: string }
+          - { name: date, label: Date (for example 26 October 2026), type: string }
+      - name: coming_up
+        label: Coming up
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: label, label: Label, type: select, options: { values: [Coming up, Forthcoming] } }
+  - name: field
+    label: Field Diaries
+    type: file
+    path: content/field-diaries.yml
+    fields:
+      - { name: dates, label: Dates, type: string }
+      - { name: intro, label: Introduction, type: text }
+      - name: photos
+        label: Photos (in route order)
+        type: object
+        list: true
+        fields:
+          - { name: photo, label: Photo, type: image }
+          - { name: caption, label: Caption, type: string }
+          - { name: place, label: Place, type: string }
+          - { name: date, label: Date, type: string }
+          - { name: home, label: Show on the home page (keep six), type: boolean }
+  - name: articles
+    label: Articles
+    type: collection
+    path: content/articles
+    format: yaml-frontmatter
+    view: { fields: [title, author, written] }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: author, label: Author, type: string, required: true }
+      - { name: written, label: Month written (YYYY-MM), type: string, required: true }
+      - { name: thumbnail, label: Thumbnail, type: image }
+      - { name: note, label: Internal note (not shown), type: string }
+      - { name: body, label: Article text (leave a blank line between paragraphs), type: text }
+  - name: events
+    label: Events
+    type: collection
+    path: content/events
+    format: yaml-frontmatter
+    view: { fields: [title, date] }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: place, label: Place, type: string }
+      - { name: convened_by, label: Convened by, type: string }
+      - { name: status, label: Status, type: select, options: { values: [coming-up, past] } }
+      - { name: photo, label: Photo, type: image }
+      - { name: summary, label: One-sentence summary, type: text }
+      - { name: body, label: More details, type: text }
+  - name: team
+    label: Team
+    type: collection
+    path: content/team
+    format: yaml-frontmatter
+    view: { fields: [name, role, division] }
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string }
+      - { name: division, label: Division, type: select, options: { values: ["Executive Office", "Policy & Research", "External Relations", "Strategic Engagement", "Creative Studio"] } }
+      - { name: order, label: Order within division, type: number }
+      - { name: photo, label: Photo (square, shoulders up), type: image }
+      - { name: linkedin, label: LinkedIn link, type: string }
+      - { name: consent, label: Written consent received, type: boolean }
+      - { name: body, label: About (50 to 80 words), type: text }
+  - name: advisers
+    label: Advisers
+    type: file
+    path: content/advisers.yml
+    fields:
+      - name: board
+        label: Board of Advisers
+        type: object
+        list: true
+        fields:
+          - { name: seat, label: Seat, type: string }
+          - { name: name, label: Name (leave empty while the seat is open), type: string }
+          - { name: role, label: Role, type: string }
+          - { name: photo, label: Photo, type: image }
+          - { name: about, label: About, type: text }
+      - name: international
+        label: International Advisers
+        type: object
+        list: true
+        fields:
+          - { name: seat, label: Seat, type: string }
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: photo, label: Photo, type: image }
+          - { name: about, label: About, type: text }
+  - name: allies
+    label: Allies
+    type: file
+    path: content/allies.yml
+    fields:
+      - { name: intro, label: Introduction, type: text }
+      - { name: open_slots, label: Empty "to be announced" boxes, type: number }
+      - name: allies
+        label: Allies (only with written agreement)
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Organisation, type: string }
+          - { name: link, label: Website, type: string }

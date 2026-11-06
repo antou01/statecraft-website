@@ -1,0 +1,123 @@
+# Field Diaries. Photos in route order; "home: true" shows the photo on the home page (keep three).
+intro: Eight days on trains, buses, CNGs and a boat across the Jamuna. About 1,100 km through eleven districts, recording short interviews on climate and development.
+dates: 21 to 29 October 2026
+photos:
+- photo: media/photos/shailkupa-tea-stall.jpg
+  caption: A roadside tea stall
+  place: Near Islamic University, Shailkupa, Jhenaidah
+  date: October 2026
+  home: false
+  time: ''
+- photo: media/photos/iu-village-interview.jpg
+  caption: Recording an interview in a village
+  place: Near Islamic University, Shailkupa, Jhenaidah
+  date: 24 October 2026
+  home: true
+  time: 8:13 am
+- photo: media/photos/iu-tea-stall.jpg
+  caption: Tea and talk at a village stall
+  place: Near Islamic University, Shailkupa, Jhenaidah
+  date: 24 October 2026
+  time: 10:35 am
+  home: false
+- photo: media/photos/iu-buffalo-cart.jpg
+  caption: A buffalo cart on a village road
+  place: Near Islamic University, Shailkupa, Jhenaidah
+  date: 24 October 2026
+  time: 10:45 am
+  home: false
+- photo: media/photos/shilaidaha-fields.jpg
+  caption: The team in the paddy fields
+  place: Shilaidaha, Kushtia
+  date: 24 October 2026
+  home: false
+  time: 3:40 pm
+- photo: media/photos/rooppur.jpg
+  caption: Rooppur at dusk, seen from the road
+  place: Rooppur, Ishwardi, Pabna
+  date: 24 October 2026
+  home: true
+  time: ''
+- photo: media/photos/rda-working-session.jpg
+  caption: An evening working session
+  place: Rural Development Academy, Bogura
+  date: 25 October 2026
+  home: false
+  time: 7:41 pm
+- photo: media/photos/sariakandi-ghat-boat.jpg
+  caption: A boat at the ghat
+  place: Jamuna river, Sariakandi, Bogura
+  date: 26 October 2026
+  time: 12:52 pm
+  home: false
+- photo: media/photos/jamuna-crossing.jpg
+  caption: Crossing the Jamuna by boat
+  place: Jamuna river, Sariakandi, Bogura
+  date: 26 October 2026
+  home: true
+  time: 1:13 pm
+- photo: media/photos/jamuna-boat-ride.jpg
+  caption: On the Jamuna crossing
+  place: Jamuna river, Sariakandi, Bogura
+  date: 26 October 2026
+  time: 1:12 pm
+  home: false
+- photo: media/photos/jamuna-sandbar.jpg
+  caption: People on a sandbar mid-river
+  place: Jamuna river, Sariakandi, Bogura
+  date: 26 October 2026
+  time: 1:26 pm
+  home: false
+- photo: media/photos/jamuna-char.jpg
+  caption: A low char on the Jamuna
+  place: Jamuna river, Sariakandi, Bogura
+  date: 26 October 2026
+  time: 1:56 pm
+  home: false
+- photo: media/photos/madarganj-elephant.jpg
+  caption: An elephant on the road
+  place: Madarganj, Jamalpur
+  date: 26 October 2026
+  time: 3:58 pm
+  home: false
+- photo: media/photos/madarganj-van.jpg
+  caption: A battery van on the Madarganj road
+  place: Madarganj, Jamalpur
+  date: 26 October 2026
+  time: 4:39 pm
+  home: false
+- photo: media/photos/mymensingh-last-stop.jpg
+  caption: The last stop of the route
+  place: Bangladesh Agricultural University, Mymensingh
+  date: 27 October 2026
+  time: 1:11 am
+  home: false
+days:
+- date: 21 Oct
+  places: Dhaka
+  note: Night train from Kamalapur
+- date: 22 Oct
+  places: Khulna, Bagerhat, Jashore
+  note: Khulna University, the Sixty Dome Mosque, the Bhairab riverside
+- date: 23 Oct
+  places: Jashore, Jhenaidah
+  note: Benapole border, Mobarakganj, Kotchandpur and the Baluhar baor
+- date: 24 Oct
+  places: Jhenaidah, Kushtia, Pabna, Natore
+  note: Shailkupa and Islamic University, Lalon Shah shrine, Shilaidaha, Rooppur
+- date: 25 Oct
+  places: Bogura
+  note: Rural Development Academy
+- date: 26 Oct
+  places: Bogura, Jamalpur
+  note: Sariakandi ghat, across the Jamuna to Madarganj, Jamalpur
+- date: 27 to 28 Oct
+  places: Mymensingh
+  note: Bangladesh Agricultural University, the Brahmaputra bank, Trishal
+- date: 29 Oct
+  places: Dhaka
+  note: Back at Kamalapur after midnight
+districts_line: Eleven districts, from Bagerhat to Mymensingh
+video:
+  youtube_id: ''   # paste only the code after watch?v= in the YouTube link
+  title: Field Diaries, October 2026

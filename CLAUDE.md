@@ -8,8 +8,96 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - For any idea he shares, also give five short lenses: 10x this, What am I missing?, Steelman this, ELI5, Be brutal.
 - Do not create extra docs or files unless he asks. Do not start building until the plan is discussed and he approves it.
 
-## The organisation
-- Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG). Treat SICDP as current, but confirm.
+## Confirmed by Hasanor (2 Nov 2026): use this as the source of truth for public copy
+- Name: Statecraft Institute for Climate and Development Policy (SICDP). Final. (SICG is the old name; never use it publicly.)
+- Who we are: SICDP is an independent, youth-led think tank based in Dhaka, Bangladesh. We work at the intersection of climate governance and state capacity in South Asia.
+- Motto: "Instituta Firma, Res Publica Firma."
+- What we try to do: We study why climate and digital governance fall short in practice, and we ground our answers in field evidence and institutional analysis.
+- Programmes:
+  - C30 Agenda: first major field research project. Audits where climate-related SDG targets failed to deliver and proposes climate priorities beyond 2030, based on fieldwork in four Bangladeshi sites facing salinity, riverbank erosion, drought and flash flooding.
+  - The Adaptation Lab: applied research arm. Describe it in general terms only (the approved copy below). Do NOT name "Charting Displacement" or any specific case on the site (Hasanor, 3 Nov 2026).
+  - The Statecraft Papers: planned working paper series. NOT yet launched.
+- Approved programme copy for the site (Hasanor, 3 Nov 2026; use as written, English):
+  - C30 Agenda: "The C30 Agenda is SICDP's first major field research project. It audits where climate-related Sustainable Development Goal targets failed to deliver for climate-vulnerable communities and proposes climate priorities for the decade beyond 2030, grounded in direct field evidence from Bangladesh. Research teams work across four sites, each representing a distinct hazard: coastal salinity, riverine erosion, drought, and haor flash floods. Findings are qualitative-led, drawn from interviews and focus groups."
+  - The Adaptation Lab: "The Adaptation Lab is the applied research arm of SICDP. It takes a single live case at a time and moves it through a structured cycle: intake, active case work, after-action review, and a published dispatch. A dual-wing design also supports an innovation and prototyping track. Each case must name a clear beneficiary, and the Lab documents what it learns so that practical adaptation lessons are shared openly with practitioners and policymakers."
+- Plans:
+  - RDA Synergy Week 2027: proposed week-long programme with the Rural Development Academy (RDA), Bogura, 28 December 2026 to 2 January 2027. TEDx event, three-day Char Research Bootcamp for about 80 students from eight universities, and a policy symposium, then a synthesis phase producing a field report, a policy brief and working papers. SICDP organises, RDA hosts, its Char Development Research Centre advises. Status: proposed, not approved.
+  - Publish working papers openly through the website, SSRN and Zenodo.
+  - Publish policy briefs and op-eds ahead of a cross-border academic roundtable with Indian institutions, targeted for December 2026.
+  - Build long-term partnerships with South Asian research institutions.
+- Real invitation (received 2 Nov 2026): Bangladesh Climate Change Trust (BCCT, Ministry of Environment, Forest and Climate Change) invited SICDP (listed first in the distribution) to send a representative to a youth consultation ahead of COP31 on meaningful youth participation in Bangladesh's climate priorities. 5 Nov 2026, 11:00, BCCT conference room, Puraton Bon Bhaban, 101 Mohakhali, Dhaka, chaired by the BCCT Managing Director; about 65 attendees. Site wording rule: "invited to / took part in" only after attending; never "partner of BCCT". Do not publish the notice image itself.
+- Contact: thestatecraftinstitute@gmail.com
+- Implication for the site: there are no published outputs yet. Everything above under "Plans" must be labelled as proposed / planned / forthcoming.
+
+## Website decisions by Hasanor (3 Nov 2026): these override the background sections below
+- Tagline: the Latin motto "Instituta Firma, Res Publica Firma" (as on the document cover) is the main tagline. Do NOT use "Southern Perspectives. Global Policy." or "Good governance is climate action".
+- Do NOT use publicly: the "borrowed capacity / built capacity" thesis, the "Borrowed Capacity" and "Premature Automation" papers (personal work of the authors, unpublished, not SICDP work), the IIT Kharagpur roundtable, the Bengal Delta Conference, anything from `SICG.docx` (outdated draft). No funding page or funder names for now (no funding yet). No 3-month goals, no achievements timeline.
+- Tone and scope: light site. Say what we work on, and note upcoming progress briefly. No heavy detail. Grows as work happens.
+- RDA: may be mentioned only as forthcoming work with RDA (proposal is in process); no dates or programme details yet.
+- Content we can publish: unpublished, original op-eds by SICDP people, published on the SICDP website under the SICDP banner; field photos and videos from the Oct 2026 trip.
+- Team: everyone is willing to give photos. Build a profile for each member (photo + short About). Hasanor will send the team list. No advisers yet. Hasanor wants the Advisory Board section SHOWN with open seats (empty, honestly labelled, no fake names or faces), so prospective advisers can see where their name and photo will go and what they gain. A name goes in only after written consent.
+- "Youth-led" can be up front.
+- Language: English only.
+- Colours: Shihab's navy dossier draft is not binding; design fresh in the brand.
+- Domain and email: no funds, so use the .xyz domain (sicdp.xyz) and the Gmail address for now.
+- Visual system (Hasanor's idea, 3 Nov 2026): nakshi kantha running stitch is THE unifying motif across the site: page background as a faint watermark weave (barely visible), section borders and dividers, text-box/card frames, profile frames, larger icons. Purple on white. Proposed guardrails (to confirm): stitch for frames, dividers and large illustrations; solid lines for body text and small UI icons (24px) so they stay legible; watermark very low opacity and never behind long text in a way that hurts contrast; built with CSS and one tiny SVG pattern so the site stays light.
+- Motion wishes (Hasanor, 3 Nov 2026; details still open): hover on empty areas should feel like touching a kantha; loading shown as stitches being sewn; page-to-page transition with a stitch (and river wave) feel; river waves can combine with stitch. Must stay light and calm, not heavy on the eye. Proposed budget: no animation libraries, all interaction JS under ~5 KB, honour prefers-reduced-motion, never block content behind a loader, phone (no hover) needs its own answer.
+- Motion decisions (Hasanor, 3 Nov 2026):
+  - Desktop hover on empty areas and on images: stitches near the cursor become clearer + a light ripple + a thread trail behind the cursor that stays while the mouse is there, then fades. Only if it stays light.
+  - Phone: section dividers stitch themselves on scroll; tap-to-reveal stitches in special places (header, footer).
+  - No blocking loader. Hero lines stitch in within ~1 s on open; image/video placeholders show stitching while loading; stitch-in plays on every page.
+  - Page transitions under 0.5 s, as fast as possible: stitch line sewn left to right for the programme "wings"; river-wave curtain and a one-time card shimmer for Team profiles, About, Contact; other places minimal.
+  - Waves drawn as a running stitch: hero, footer, and as dividers between landing-page sections.
+  - Illustrations gently animated (haor water rippling, tree drying under the sun, etc.): noticeable but never annoying.
+  - Colour: purple only (no secondary colours for now).
+  - Reduced-motion users: no movement, but keep a little feel (e.g. soft fades).
+  - Dark mode (decided 3 Nov 2026): follow the device automatically, NO toggle button. Light device = white site; dark device = dark site. Dark background is a soft charcoal / iron black (not pure black), text light purple-white (#F4EDF6), links light purple, watermark even fainter. Emblem: purple version in light mode, full-colour version in dark mode; the emblem's elements must never change. Phone browser bar (Android status/address bar) should match the purple header (theme-color).
+  - Trail: on PC long, following the mouse path, fades 1 s after the mouse leaves; on phone short (finger length). Nothing happens over text. Ripple only on images.
+  - Illustration animation runs slowly while on screen, stops off screen; only one moving illustration on screen at a time. Hero: photos rotate one after another.
+  - Low-end phones: drop images/animations where needed and just show the content.
+  - Structure (to confirm): full home page with sections; menu items scroll to sections; About has its own entry; NO contact page or form, contact (email, phone) and social links sit in the footer; programmes and divisions are the "wings" with their own pages and the stitch transition.
+  - Illustrations: Hasanor generated them in Google Flow from the prompts; he will send them as reference. Claude redraws them as clean, layered line-art SVG so they can be animated.
+- More decisions (3 Nov 2026):
+  - Section names: "From the field" is called "Field Diaries"; "Writing" is called "Write-ups" (op-eds shown as thumbnail cards).
+  - Division pages: description of the division's work, member list, links to member profiles.
+  - Photos: files named for the hero go to the hero (one random photo per visit with its place name, no slideshow); files named field trip, and unnamed ones, go to Field Diaries.
+  - Emblem: tree gaps stay transparent (also in dark mode). Dark-mode header is charcoal (like YouTube).
+  - All accounts (domain, Cloudflare, GitHub, YouTube) on the organisation Gmail. Domain sicdp.xyz not bought yet; buying now.
+  - Phone 01812267679 is Shihab's; fine on the site. Op-eds are approved by Shihab.
+  - Field video subjects gave consent. No Bengali on the site. No soft target date. Test device: Hasanor's low-cost Android.
+- Photos (decided 3 Nov 2026): hero set = Hero_1 (buffaloes on Jamuna char), Hero_4 (garbage burning beside homes and farmland, Kotchandpur), the paddy field with power lines, the boats on the char, the betel-nut tree road with the egret. Everything else goes to Field Diaries, including the tea stall group (no face blurring), Rooppur seen from outside (neutral caption; SICDP will work on it later) and the elephant on the road. Strip GPS/metadata from every published photo. Home shows 6 Field Diaries photos; a separate Field Diaries page shows all, with a stitched route on a Bangladesh map from Bagerhat to Mymensingh. Hasanor will send notes with places and dates.
+- Team review of preview v1 (3 Nov 2026 evening, Hasanor, Shihab, Tahmid, Jony). These override earlier motion/colour notes where they differ; items marked (?) await confirmation:
+  - Logo: on first open the full logo lockup sits large in the page body (colour version on dark, purple on white); on scroll it shrinks into the sticky header. The current header wordmark font feels AI-ish: change it.
+  - Fonts: change the type overall (feels "AI slop"); free Google Fonts only; inspiration from nesta.org.uk (not copied).
+  - Colour: add soft colour bands per section (emblem palette, restrained, "premium" not loud) and use colour wherever it fits; thumbnails to be redrawn in colour. Purple-only rule is relaxed.
+  - Hero eyebrow: drop "Independent · Youth-led · Dhaka"; say Bangladesh only (not Dhaka-centred). (?) whether "Independent" and "Youth-led" stay.
+  - Hero photos rotate every 2 seconds (replaces "one random per visit"). On phone the photo goes BELOW the text.
+  - Theme: keep following the device (system). (?) they also want to try the dark version on phone.
+  - Thread trail behind the mouse: REMOVE (looks like a developer portfolio gimmick). Keep the weave glow near the cursor, and add the same glow on touch on phones (plain areas only, never over text); make the weave more visible on phones.
+  - Footer: the dark footer colour must fill up to the wave so the wave is the footer's top edge (not a wave drawn on a box).
+  - Field Diaries: photos open in a large stitched-frame view on click, with swipe / next-previous within the row; links to Field Diaries land at the top with the map first. Tea stall photo is Shailkupa, Jhenaidah (not Kotchandpur); (?) the "Near Islamic University" photos also Shailkupa, Jhenaidah. Night photo caption near BAU needs a relevant caption or a better BAU photo.
+  - Write-ups: (?) rename to "Articles".
+  - Coming up: section keeps the name "Coming up"; items say "Coming up", not "Forthcoming" ("Forthcoming" is for publications). Add the paper Shihab sent (not received yet). Section looks empty: needs more.
+  - Team and Advisory Board come OFF the home page. New menu "About SICDP" with dropdown modelled on cgs-bd.com: Who we are, Board of Advisers, International Advisers, Allies (partners), Team (last). No Board of Directors (directors sit in Team). Pages may use clearly marked placeholder text. Add a top-level "Events" section. Footer social links as icons.
+  - Drought illustration to be redrawn more realistic (e.g. cattle on cracked land). More human photos (team at work) to come.
+  - Do not share the preview outside the team yet.
+  - Follow-up answers (3 Nov 2026 night): menu = About SICDP (dropdown: Who we are, Board of Advisers, International Advisers, Allies, Team), Our work, Field Diaries, Articles, Events. "Write-ups" is renamed "Articles". Every page opens with the big logo, which shrinks into the header on scroll. Team page = organisational structure built from an image Hasanor will upload. Allies page: "We are building partnerships" + empty placeholder slots (talks under way), no names. Events page: treat the BCCT youth consultation (5 Nov) as done for the preview, with a slot for a good photo; must be true before going live. Statecraft Papers stays "Forthcoming". Field Diaries: home photos and button all link to the Field Diaries page, which opens on the map (map animates in); on that page a photo click opens a large view. IU-area photos labelled with both "Near Islamic University" and "Shailkupa, Jhenaidah". Night photo stays, needs a better caption. Footer icons coloured from the logo palette. Section colours should be vibrant enough to attract (Nesta as inspiration, not copied); fonts in that spirit. CGS homepage slider as inspiration (not copied). Add a dark-mode button so the team can test dark on phones.
+- Review of preview v2 (4 Nov 2026, Hasanor, Tahmid, Shihab): logo is the colour emblem in light mode too (purple text), and moves into the header gradually with scroll; hero colour block purple not saffron; Statecraft Papers accent purple; line art in focus cards and skyline more visible; turbine must spin in place; Who we are page motto gets a background block like the others; advisers boxes get stitched borders, more dummy international seats; Team page: 8 equal placeholder profiles, no org-structure placeholder for now; Field Diaries on home: one row of 3 large photos, date as a calendar chip, "Bagerhat to Mymensingh" as a typographic line with a map icon, buttons centred below; Field Diaries page must open at the top with the map animation; day list with calendar icons joined like a timeline and place chips (text editable later); photo viewer: stitched frame inside the photo, caption and icons inside the frame (place pin, date, time from metadata), arrow icons on hover (desktop), swipe on phone, close button at the bottom inside; faster photo loading; Articles cards equal height; article pages: no big logo, larger title, date with calendar icon, author box with bio, sidebar with category and suggested articles; Coming up: the event is the main focus (photo + short line, details on Events page), RDA and Papers below; band colour runs right into the footer wave (no white gap); weave glow also in the footer.
+- Write-ups (content/write-ups/, approved 3 Nov 2026): "Is Bangladesh Ready to Automate?" (Shihab, written July 2026; the op-ed may use the term "Premature Automation" with its attribution; sources held by author, added later), "TaRL: Small Solution to a Big Problem" and "The Nightmare of Never-Skilling" (Shuaib Ahmed Araf, SICDP team member, consent given, written September 2026). Show month only, labelled as written, not a fake publication day. Thumbnails: Hasanor will send images.
+- Answers to the open questions (3 Nov 2026):
+  - Plan and purple brand: APPROVED as written (Shihab agreed). Building can start once the starter items arrive.
+  - Launch: no fixed date.
+  - Site maintainer: Shanto (Hasanor Rahman Shanto, i.e. Hasanor himself).
+  - Motto: Latin only, no translation shown.
+  - Advisory Board: four open seats, no names, no Founding Chair for now: Climate & Disaster Governance; Rural Development & Char Lands; Public Administration & Digital Governance; Foreign Adviser.
+  - Prof. Abdullah-Al-Mamun: not approaching for now. Do not reference him on the site.
+  - Team order: by division, following Hasanor's division chart (chart not yet received). Anyone in more than one division needs one primary division.
+  - Founding date: 8 June 2026.
+  - Contact: email + phone 01812267679 (as on the letterhead), no form.
+  - Festival greetings: none for now.
+
+## The organisation (background from internal documents)
+- Name: Statecraft Institute for Climate and Development Policy (SICDP). Earlier name in some documents: Statecraft Institute for Climate & Governance (SICG).
 - Youth-led policy think tank, Dhaka, founded 2026 by Md. Imam Hossain Shihab (Founder and Executive Director). Hasanor leads design in the Creative Studio and wants a leadership role.
 - Core thesis: "borrowed capacity". Bangladesh outsources state functions (climate governance, digital services) to NGOs, donors and consultants. Goal: "built capacity". Vision line: "States that build, not borrow, the capacity to govern their own future." Tagline in an earlier draft: "Southern Perspectives. Global Policy."
 - Two research tracks:
@@ -19,7 +107,7 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - Events: RDA Synergy Week 2027 at the Rural Development Academy, Bogura, with its Char Development Research Centre (TEDxBogura, Char Research Bootcamp, Delta Futures Symposium; about 100 participants from 8 universities; proposal to RDA's Director General drafted, NOT yet approved). IIT Kharagpur cross-border roundtable, target Dec 2026 (faculty panel NOT confirmed). A Dhaka roundtable is planned.
 - Publication imprint: The Statecraft Papers. Standard: "useful to someone making a decision".
 - Structure: four divisions (Policy & Research, External Relations, Strategic Engagement, Creative Studio); Advisory Fellows and an advisory board of teachers planned.
-- Field content: in Oct 2026 Hasanor and team did an 8-day trip Khulna to Moulvibazar (13 districts) recording short interviews on climate and development ("চায়ের কাপে বাংলাদেশ" / Voices from the Delta, Field Diary, Field Notes), including RDA Bogura experts.
+- Field content: 21 to 29 Oct 2026 Hasanor and team travelled Dhaka, Khulna, Bagerhat, Jashore, Jhenaidah, Kushtia, Pabna, Natore, Bogura (RDA), Jamalpur, Mymensingh (11 districts, about 1,100 km) recording short interviews ("চায়ের কাপে বাংলাদেশ"). The older Khulna to Moulvibazar plan was not the actual route. Public route and photo cross-check: `docs/field/route-oct-2026.md`.
 - Hasanor's vision: a think tank that feels prestigious yet "ours" to ordinary Bangladeshis across religion and politics, rooted in the land, recognisable by colour and logo alone, relevant for 50 to 100 years.
 
 ## Repository layout
@@ -54,14 +142,14 @@ Read this whole file before doing anything. Then read the files listed under "Re
 - The site must have a named maintainer and be easy to update.
 
 ## Open questions to ask Hasanor first
-1. Who will update the site after launch?
-2. Domain: keep .xyz or get .org?
-3. One landing page first, or the full 8 to 10 page site?
-4. English only, or Bengali too?
-5. Build on Shihab's draft or start fresh in the new purple brand? Has Shihab agreed to the new brand?
-6. Deadline (ideally before the RDA proposal goes out)?
-7. Names, roles, photos and consent for leadership, team and advisory board?
-8. Final organisation name (SICDP vs SICG) and short name?
+1. ~~Who will update the site~~ Answered: Shanto (Hasanor).
+2. ~~Domain~~ Answered: .xyz + Gmail for now (3 Nov 2026).
+3. One landing page first, or the full 8 to 10 page site? (He wants a light site.)
+4. ~~Language~~ Answered: English only.
+5. ~~Shihab's draft~~ Answered: start fresh; purple brand and plan approved.
+6. ~~Deadline~~ Answered: no fixed date.
+7. Team list, roles, photos and short bios (he will send). Advisers: none yet.
+8. ~~Final organisation name~~ Answered: SICDP (2 Nov 2026).
 
 ## How to start a session
 1. Read this file and the key documents in `docs/internal/`.
